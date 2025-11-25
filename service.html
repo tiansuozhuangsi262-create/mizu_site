@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ご利用の流れ・料金案内 - 高級水圧転写サービス</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            }
+        }
+
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00A3FF',
+                        secondary: '#121212'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; }
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        .carbon-pattern {
+            background-image: 
+                linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.03) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.03) 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(0, 163, 255, 0.3);
+        }
+        .metallic-gradient {
+            background: linear-gradient(135deg, #374151 0%, #111827 50%, #1f2937 100%);
+        }
+        .timeline-connector:last-child::before {
+            display: none;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .accordion-content.active {
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body class="bg-white pt-20">
+    <!-- Global Navigation Bar -->
+<nav class="bg-[#121212] text-white fixed w-full top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center">
+            <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto">
+        </a>
+
+        <!-- PC Menu -->
+        <div class="hidden md:flex space-x-8 items-center">
+            <a href="index.html" class="hover:text-[#00A3FF] transition-colors">ホーム</a>
+            <a href="works.html" class="hover:text-[#00A3FF] transition-colors">施工事例・技術</a>
+            <a href="service.html" class="hover:text-[#00A3FF] transition-colors">料金・流れ</a>
+            <a href="service.html#faq" class="hover:text-[#00A3FF] transition-colors">よくある質問</a>
+            <a href="contact.html" class="bg-[#00A3FF] text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors whitespace-nowrap font-bold shadow-lg">
+                お問い合わせ
+            </a>
+        </div>
+
+        <!-- Mobile Menu Button (Hamburger) -->
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Content (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#1a1a1a] pb-4">
+        <div class="flex flex-col items-center space-y-4 py-4">
+            <a href="index.html" class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">ホーム</a>
+            <a href="works.html" class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">施工事例・技術</a>
+            <a href="service.html" class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">料金・流れ</a>
+            <a href="service.html#faq" class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">よくある質問</a>
+            <a href="contact.html" class="block bg-[#00A3FF] text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors whitespace-nowrap font-bold w-3/4 text-center mt-2">
+                お問い合わせ
+            </a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+    });
+</script>
+
+    <!-- Page Header -->
+    <section class="metallic-gradient py-24 relative overflow-hidden text-white">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <div class="w-16 h-1 bg-primary mx-auto mb-8"></div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">ご利用の流れ・料金案内</h1>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                オーダーメイドだからこそ、丁寧な対話で理想を実現します。<br>
+                お問い合わせから納品までのステップガイド。
+            </p>
+        </div>
+    </section>
+
+    <!-- Order Workflow -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed text-center mb-16">
+                お問い合わせから納品まで、安心してお任せいただける丁寧なサポート体制をご用意しています
+            </p>
+            <!-- 6ステップのグリッド -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-8 relative">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center text-center relative group">
+                    <!-- 番号 -->
+                    <div class="w-16 h-16 rounded-full bg-[#1a3b8c] text-white flex items-center justify-center text-2xl font-bold mb-6 relative z-10">
+                        1
+                    </div>
+                    <!-- 矢印（PCのみ表示・3の倍数以外） -->
+                    <div class="hidden md:block absolute top-6 -right-6 text-gray-300 text-3xl z-0 transform translate-x-1/2">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    
+                    <!-- アイコン -->
+                    <div class="text-[#1a3b8c] text-3xl mb-4">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <!-- テキスト -->
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">お問い合わせ</h3>
+                    <p class="text-sm text-gray-600 mb-3 leading-relaxed">
+                        電話・メール・フォームからお気軽<br>にご相談ください
+                    </p>
+                    <span class="text-[#1a3b8c] font-bold text-sm">即日対応</span>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center text-center relative group">
+                    <div class="w-16 h-16 rounded-full bg-[#1a3b8c] text-white flex items-center justify-center text-2xl font-bold mb-6 relative z-10">
+                        2
+                    </div>
+                    <div class="hidden md:block absolute top-6 -right-6 text-gray-300 text-3xl z-0 transform translate-x-1/2">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    
+                    <!-- アイコン -->
+                    <div class="text-[#1a3b8c] text-3xl mb-4">
+                        <i class="fa-regular fa-file-lines"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">詳細ヒアリング</h3>
+                    <p class="text-sm text-gray-600 mb-3 leading-relaxed">
+                        製品の詳細、ご希望デザイン、<br>予算等をお聞かせください
+                    </p>
+                    <span class="text-[#1a3b8c] font-bold text-sm">1-2営業日</span>
+                </div>
+                <!-- Step 3 (矢印なし) -->
+                <div class="flex flex-col items-center text-center relative group">
+                    <div class="w-16 h-16 rounded-full bg-[#1a3b8c] text-white flex items-center justify-center text-2xl font-bold mb-6 relative z-10">
+                        3
+                    </div>
+                    <!-- 3列目は矢印なし -->
+                    
+                    <!-- アイコン -->
+                    <div class="text-[#1a3b8c] text-3xl mb-4">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <!-- テキスト -->
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">無料見積もり</h3>
+                    <p class="text-sm text-gray-600 mb-3 leading-relaxed">
+                        詳細な見積書と施工プランをご<br>提案いたします
+                    </p>
+                    <span class="text-[#1a3b8c] font-bold text-sm">2-3営業日</span>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center text-center relative group">
+                    <div class="w-16 h-16 rounded-full bg-[#1a3b8c] text-white flex items-center justify-center text-2xl font-bold mb-6 relative z-10">
+                        4
+                    </div>
+                    <div class="hidden md:block absolute top-6 -right-6 text-gray-300 text-3xl z-0 transform translate-x-1/2">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    
+                    <!-- アイコン -->
+                    <div class="text-[#1a3b8c] text-3xl mb-4">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <!-- テキスト -->
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">ご契約</h3>
+                    <p class="text-sm text-gray-600 mb-3 leading-relaxed">
+                        内容にご納得いただけましたら正<br>式契約を締結します
+                    </p>
+                    <span class="text-[#1a3b8c] font-bold text-sm">1営業日</span>
+                </div>
+                <!-- Step 5 -->
+                <div class="flex flex-col items-center text-center relative group">
+                    <div class="w-16 h-16 rounded-full bg-[#1a3b8c] text-white flex items-center justify-center text-2xl font-bold mb-6 relative z-10">
+                        5
+                    </div>
+                    <div class="hidden md:block absolute top-6 -right-6 text-gray-300 text-3xl z-0 transform translate-x-1/2">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    
+                    <!-- アイコン -->
+                    <div class="text-[#1a3b8c] text-3xl mb-4">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <!-- テキスト -->
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">施工作業</h3>
+                    <p class="text-sm text-gray-600 mb-3 leading-relaxed">
+                        専門技術者による丁寧な施工<br>を実施いたします
+                    </p>
+                    <span class="text-[#1a3b8c] font-bold text-sm">3-7営業日</span>
+                </div>
+                <!-- Step 6 (矢印なし) -->
+                <div class="flex flex-col items-center text-center relative group">
+                    <div class="w-16 h-16 rounded-full bg-[#1a3b8c] text-white flex items-center justify-center text-2xl font-bold mb-6 relative z-10">
+                        6
+                    </div>
+                    
+                    <!-- アイコン -->
+                    <div class="text-[#1a3b8c] text-3xl mb-4">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <!-- テキスト -->
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">検査・納品</h3>
+                    <p class="text-sm text-gray-600 mb-3 leading-relaxed">
+                        品質検査を経て、大切な製品<br>をお届けします
+                    </p>
+                    <span class="text-[#1a3b8c] font-bold text-sm">最短3日</span>
+                    <p class="text-gray-500 text-xs mt-1">※国際便のため</p>
+                </div>
+            </div>
+            <!-- 納期目安エリア -->
+            <div class="mt-16 bg-gray-50 rounded-3xl p-8 text-center max-w-4xl mx-auto">
+                <h4 class="text-[#1a3b8c] font-bold text-lg mb-6">標準的な納期目安</h4>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                    <div class="bg-white px-8 py-4 rounded-xl shadow-sm border border-gray-100">
+                        <span class="text-[#1a3b8c] text-3xl font-bold">7-14</span>
+                        <span class="text-gray-600 font-bold ml-1">営業日</span>
+                    </div>
+                    <div class="text-gray-400 text-xl hidden md:block">→</div>
+                    <div class="text-left text-gray-600 text-sm">
+                        <p>お問い合わせから納品まで</p>
+                        <p class="text-gray-400 text-xs mt-1">※製品・デザインにより変動</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price List -->
+<section class="py-20 bg-[#121212]">
+    <div class="max-w-6xl mx-auto px-6">
+        
+        <!-- 見出し（必要に応じて削除・変更してください） -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-white mb-4">参考施工費用</h2>
+            <p class="text-gray-400">サイズに応じた明確な料金体系をご用意しています</p>
+        </div>
+
+        <!-- 3列カードグリッド -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- 1. 小物 (Small) -->
+            <div class="bg-[#1a1a1a] rounded-[2rem] p-10 text-center border border-white/5 hover:border-[#00A3FF]/50 transition-all duration-300">
+                <!-- アイコン -->
+                <div class="w-20 h-20 mx-auto bg-[#00A3FF] rounded-full flex items-center justify-center mb-8 shadow-[0_0_15px_rgba(0,163,255,0.3)]">
+                    <i class="fa-solid fa-mobile-screen text-2xl text-[#121212]"></i>
+                </div>
+                <!-- タイトル -->
+                <h3 class="text-white text-xl font-bold mb-6">小物</h3>
+                <!-- 価格 -->
+                <div class="text-[#00A3FF] text-5xl font-bold mb-8 tracking-tight">
+                    <span class="text-3xl align-top">¥</span>500<span class="text-2xl align-baseline">~</span>
+                </div>
+                <!-- リスト -->
+                <ul class="text-gray-400 space-y-3 text-sm font-medium">
+                    <li>スマホケース</li>
+                    <li>ゲームコントローラー</li>
+                    <li>小型パーツ</li>
+                </ul>
+            </div>
+
+            <!-- 2. 中型 (Medium) - 青い枠線付き -->
+            <div class="bg-[#1a1a1a] rounded-[2rem] p-10 text-center border-2 border-[#00A3FF] relative transform md:-translate-y-2 shadow-[0_0_30px_rgba(0,163,255,0.1)]">
+                <!-- アイコン -->
+                <div class="w-20 h-20 mx-auto bg-[#00A3FF] rounded-full flex items-center justify-center mb-8 shadow-[0_0_15px_rgba(0,163,255,0.3)]">
+                    <!-- バイクや自転車のアイコン -->
+                    <i class="fa-solid fa-motorcycle text-2xl text-[#121212]"></i>
+                </div>
+                <!-- タイトル -->
+                <h3 class="text-white text-xl font-bold mb-6">中型</h3>
+                <!-- 価格 -->
+                <div class="text-[#00A3FF] text-5xl font-bold mb-8 tracking-tight">
+                    <span class="text-3xl align-top">¥</span>1,000<span class="text-2xl align-baseline">~</span>
+                </div>
+                <!-- リスト -->
+                <ul class="text-gray-400 space-y-3 text-sm font-medium">
+                    <li>ヘルメット</li>
+                    <li>バイクパーツ</li>
+                    <li>家電製品</li>
+                </ul>
+            </div>
+
+            <!-- 3. 大型 (Large) -->
+            <div class="bg-[#1a1a1a] rounded-[2rem] p-10 text-center border border-white/5 hover:border-[#00A3FF]/50 transition-all duration-300">
+                <!-- アイコン -->
+                <div class="w-20 h-20 mx-auto bg-[#00A3FF] rounded-full flex items-center justify-center mb-8 shadow-[0_0_15px_rgba(0,163,255,0.3)]">
+                    <i class="fa-solid fa-car text-2xl text-[#121212]"></i>
+                </div>
+                <!-- タイトル -->
+                <h3 class="text-white text-xl font-bold mb-6">大型</h3>
+                <!-- 価格 -->
+                <div class="text-[#00A3FF] text-5xl font-bold mb-8 tracking-tight">
+                    <span class="text-3xl align-top">¥</span>2,000<span class="text-2xl align-baseline">~</span>
+                </div>
+                <!-- リスト -->
+                <ul class="text-gray-400 space-y-3 text-sm font-medium">
+                    <li>バンパー</li>
+                    <li>ホイール</li>
+                    <li>大型パーツ</li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <!-- 注釈 -->
+        <p class="text-center text-gray-500 text-xs mt-12">
+            ※上記は基本料金です。下地処理の状態や複雑さ、ロット数により変動する場合がございます。<br>
+            正確な金額は無料お見積もりにてご提示いたします。
+        </p>
+
+    </div>
+</section>
+
+    <!-- Pattern Catalog -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gray-900">豊富なデザインバリエーション</h2>
+                <p class="text-gray-600 text-lg">高品質フィルムによる多彩な表現</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group relative overflow-hidden rounded-lg border border-gray-200 hover:border-primary transition-all duration-300 shadow-lg">
+                    <div class="aspect-square bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=real%20carbon%20fiber%20texture%20close-up%2C%20authentic%20woven%20carbon%20pattern%2C%20black%20and%20gray%20automotive%20grade%20material%2C%20high-resolution%20detailed%20weave%20structure%2C%20professional%20industrial%20finish&width=400&height=400&seq=carbon001&orientation=squarish');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent group-hover:from-primary/20 transition-all duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <h3 class="text-lg font-semibold mb-1 text-white">Real Carbon</h3>
+                        <p class="text-sm text-gray-200">綾織・平織</p>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-lg border border-gray-200 hover:border-primary transition-all duration-300 shadow-lg">
+                    <div class="aspect-square bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=forged%20carbon%20fiber%20texture%2C%20marbled%20carbon%20pattern%2C%20random%20weave%20carbon%20fiber%2C%20luxury%20automotive%20material%2C%20black%20and%20silver%20mixed%20pattern%2C%20high-end%20finish&width=400&height=400&seq=forged001&orientation=squarish');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent group-hover:from-primary/20 transition-all duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <h3 class="text-lg font-semibold mb-1 text-white">Forged Carbon</h3>
+                        <p class="text-sm text-gray-200">大理石調カーボン</p>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-lg border border-gray-200 hover:border-primary transition-all duration-300 shadow-lg">
+                    <div class="aspect-square bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=luxury%20wood%20grain%20texture%2C%20high-end%20walnut%20wood%20pattern%2C%20rich%20brown%20wooden%20surface%2C%20premium%20furniture%20grade%20wood%2C%20natural%20wood%20fiber%20details%2C%20elegant%20finish&width=400&height=400&seq=wood001&orientation=squarish');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent group-hover:from-primary/20 transition-all duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <h3 class="text-lg font-semibold mb-1 text-white">Wood Grain</h3>
+                        <p class="text-sm text-gray-200">高級木目</p>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-lg border border-gray-200 hover:border-primary transition-all duration-300 shadow-lg">
+                    <div class="aspect-square bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=military%20camouflage%20pattern%2C%20tactical%20camo%20design%2C%20urban%20digital%20camouflage%2C%20professional%20military%20grade%20pattern%2C%20gray%20and%20black%20camo%2C%20modern%20warfare%20style&width=400&height=400&seq=camo001&orientation=squarish');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent group-hover:from-primary/20 transition-all duration-300"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <h3 class="text-lg font-semibold mb-1 text-white">Camouflage</h3>
+                        <p class="text-sm text-gray-200">迷彩・柄物</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison & Quality -->
+    <section class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">なぜ当社の水圧転写なのか</h2>
+                <p class="text-gray-300 text-lg">他の手法との違いを比較</p>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700">
+                    <thead>
+                        <tr class="bg-primary text-white">
+                            <th class="px-6 py-4 text-left font-semibold">比較項目</th>
+                            <th class="px-6 py-4 text-center font-semibold">当社（水圧転写）</th>
+                            <th class="px-6 py-4 text-center font-semibold">ラッピング</th>
+                            <th class="px-6 py-4 text-center font-semibold">塗装</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-300">
+                        <tr class="border-t border-gray-700">
+                            <td class="px-6 py-4 font-medium">耐久性</td>
+                            <td class="px-6 py-4 text-center text-primary font-bold">◎</td>
+                            <td class="px-6 py-4 text-center text-yellow-500">△</td>
+                            <td class="px-6 py-4 text-center text-green-500">○</td>
+                        </tr>
+                        <tr class="border-t border-gray-700">
+                            <td class="px-6 py-4 font-medium">3D 曲面対応</td>
+                            <td class="px-6 py-4 text-center text-primary font-bold">◎</td>
+                            <td class="px-6 py-4 text-center text-yellow-500">△</td>
+                            <td class="px-6 py-4 text-center text-green-500">○</td>
+                        </tr>
+                        <tr class="border-t border-gray-700">
+                            <td class="px-6 py-4 font-medium">継ぎ目</td>
+                            <td class="px-6 py-4 text-center text-primary font-bold">なし</td>
+                            <td class="px-6 py-4 text-center text-red-500">あり</td>
+                            <td class="px-6 py-4 text-center text-primary font-bold">なし</td>
+                        </tr>
+                        <tr class="border-t border-gray-700">
+                            <td class="px-6 py-4 font-medium">柄の再現性</td>
+                            <td class="px-6 py-4 text-center text-primary font-bold">◎</td>
+                            <td class="px-6 py-4 text-center text-green-500">○</td>
+                            <td class="px-6 py-4 text-center text-yellow-500">△</td>
+                        </tr>
+                        <tr class="border-t border-gray-700">
+                            <td class="px-6 py-4 font-medium">質感</td>
+                            <td class="px-6 py-4 text-center text-primary font-bold">◎</td>
+                            <td class="px-6 py-4 text-center text-green-500">○</td>
+                            <td class="px-6 py-4 text-center text-primary font-bold">◎</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- よくあるご質問セクション -->
+
+<section class="py-20 bg-[#121212]" id="faq">
+
+    <div class="max-w-4xl mx-auto px-6">
+
+        
+
+        <!-- セクションタイトル -->
+
+        <div class="text-center mb-16">
+
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">よくあるご質問</h2>
+
+            <p class="text-gray-400">基礎的な内容から専門的な技術仕様までお答えします</p>
+
+        </div>
+
+
+
+        <!-- カテゴリ1：基礎・サービスについて -->
+
+        <div class="mb-12">
+
+            <h3 class="text-[#00A3FF] font-bold text-xl mb-6 flex items-center">
+
+                <i class="fa-regular fa-circle-question mr-3"></i>基礎・サービスについて
+
+            </h3>
+
+            <div class="space-y-4">
+
+                
+
+                <!-- Q1 -->
+
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-[#00A3FF]/30 transition-all">
+
+                    <button class="flex items-center justify-between w-full p-6 text-left cursor-pointer" onclick="toggleAccordion(this)">
+
+                        <span class="text-lg font-bold text-white group-hover:text-[#00A3FF] transition-colors">Q. 水転写とラッピングやシールは何が違うのですか？</span>
+
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+
+                    </button>
+
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5">
+
+                            最大の違いは「密着度」と「形状追従性」です。フィルムではなくインクの膜で包み込むため、複雑な3D曲面でも継ぎ目のないシームレスな仕上がりになります。また、トップコートで保護するため、シールのように剥がれる心配がありません。
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Q2 -->
+
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-[#00A3FF]/30 transition-all">
+
+                    <button class="flex items-center justify-between w-full p-6 text-left cursor-pointer" onclick="toggleAccordion(this)">
+
+                        <span class="text-lg font-bold text-white group-hover:text-[#00A3FF] transition-colors">Q. どんな素材に施工できますか？</span>
+
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+
+                    </button>
+
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5">
+
+                            基本的に「水に浸けられるもの」で「塗装ができる素材」であれば可能です。樹脂（ABS/PP等）、金属、木材、カーボン、ガラスなどが対象です。
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Q3 -->
+
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-[#00A3FF]/30 transition-all">
+
+                    <button class="flex items-center justify-between w-full p-6 text-left cursor-pointer" onclick="toggleAccordion(this)">
+
+                        <span class="text-lg font-bold text-white group-hover:text-[#00A3FF] transition-colors">Q. 個人での依頼や、小ロット（1個〜）の注文は可能ですか？</span>
+
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+
+                    </button>
+
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5">
+
+                            はい、可能です。個人様のカスタムパーツ1点から、企業様の試作、そして万単位の量産まで幅広く対応しております。
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Q4 -->
+
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-[#00A3FF]/30 transition-all">
+
+                    <button class="flex items-center justify-between w-full p-6 text-left cursor-pointer" onclick="toggleAccordion(this)">
+
+                        <span class="text-lg font-bold text-white group-hover:text-[#00A3FF] transition-colors">Q. 自分の持っているパーツの色（下地）を活かせますか？</span>
+
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+
+                    </button>
+
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5">
+
+                            はい、可能です。スモーク塗装のように下地を透かす手法で、シルバーパーツを「シルバーカーボン風」に見せるなどのアレンジも人気です。
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- カテゴリ2：技術・耐久性について -->
+
+        <div class="mb-12">
+
+            <h3 class="text-[#00A3FF] font-bold text-xl mb-6 flex items-center">
+
+                <i class="fa-solid fa-screwdriver-wrench mr-3"></i>技術・耐久性について
+
+            </h3>
+
+            <div class="space-y-4">
+
+
+
+                <!-- Q5 -->
+
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-[#00A3FF]/30 transition-all">
+
+                    <button class="flex items-center justify-between w-full p-6 text-left cursor-pointer" onclick="toggleAccordion(this)">
+
+                        <span class="text-lg font-bold text-white group-hover:text-[#00A3FF] transition-colors">Q. すぐに剥がれたりしませんか？耐久性は？</span>
+
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+
+                    </button>
+
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5">
+
+                            非常に高い耐久性を持ちます。<strong>大手二輪メーカー様のフレーム塗装</strong>など、重要保安部品にも採用される基準をクリアしており、屋外の過酷な環境下でも純正塗装と同等の耐候性を発揮します。
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Q6 -->
+
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-[#00A3FF]/30 transition-all">
+
+                    <button class="flex items-center justify-between w-full p-6 text-left cursor-pointer" onclick="toggleAccordion(this)">
+
+                        <span class="text-lg font-bold text-white group-hover:text-[#00A3FF] transition-colors">Q. エンジン回りなど、熱くなる場所にも施工できますか？</span>
+
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+
+                    </button>
+
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5">
+
+                            はい、可能です。使用する材料は一般的に100℃〜120℃程度の耐熱性を持ち、エンジンカバーやマフラーガードへの施工実績も多数ございます。
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Q7 -->
+
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-[#00A3FF]/30 transition-all">
+
+                    <button class="flex items-center justify-between w-full p-6 text-left cursor-pointer" onclick="toggleAccordion(this)">
+
+                        <span class="text-lg font-bold text-white group-hover:text-[#00A3FF] transition-colors">Q. 傷があるパーツや、塗装が劣化したパーツでも大丈夫ですか？</span>
+
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+
+                    </button>
+
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5">
+
+                            問題ありません。転写前の下地処理工程で研磨やパテ埋めを行い、表面を新品同様に整えてから施工いたします。
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Q8 -->
+
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-[#00A3FF]/30 transition-all">
+
+                    <button class="flex items-center justify-between w-full p-6 text-left cursor-pointer" onclick="toggleAccordion(this)">
+
+                        <span class="text-lg font-bold text-white group-hover:text-[#00A3FF] transition-colors">Q. ツヤ消し（マット）などの質感指定はできますか？</span>
+
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                    </button>
+
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5">
+
+                            はい、可能です。グロス（ツヤあり）、半ツヤ、ツヤ消し（マット）など、ご希望の質感に調整して仕上げることができます。
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- カテゴリ3：費用・納期について -->
+
+        <div class="mb-12">
+
+            <h3 class="text-[#00A3FF] font-bold text-xl mb-6 flex items-center">
+
+                <i class="fa-solid fa-money-bill-wave mr-3"></i>費用・納期について
+
+            </h3>
+
+            <div class="space-y-4">
+
+                <!-- Q9 -->
+
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-[#00A3FF]/30 transition-all">
+
+                    <button class="flex items-center justify-between w-full p-6 text-left cursor-pointer" onclick="toggleAccordion(this)">
+
+                        <span class="text-lg font-bold text-white group-hover:text-[#00A3FF] transition-colors">Q. 費用はどのくらいかかりますか？</span>
+
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+
+                    </button>
+
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5">
+
+                            パーツのサイズ、形状の複雑さ、下地処理の有無、ロット数、デザインの種類によって大きく変動します。無料お見積もりにて詳細をご提示しますので、お気軽にお問い合わせください。
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Q10 -->
+
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-[#00A3FF]/30 transition-all">
+
+                    <button class="flex items-center justify-between w-full p-6 text-left cursor-pointer" onclick="toggleAccordion(this)">
+
+                        <span class="text-lg font-bold text-white group-hover:text-[#00A3FF] transition-colors">Q. 最低ロット数はありますか？</span>
+
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+
+                    </button>
+
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5">
+
+                            ございません。個人様のワンオフカスタムから、企業様の数万単位の量産まで、幅広く対応しております。まずはお気軽にご相談ください。
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Q11 -->
+
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-[#00A3FF]/30 transition-all">
+
+                    <button class="flex items-center justify-between w-full p-6 text-left cursor-pointer" onclick="toggleAccordion(this)">
+
+                        <span class="text-lg font-bold text-white group-hover:text-[#00A3FF] transition-colors">Q. 納期はどのくらいかかりますか？</span>
+
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+
+                    </button>
+
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5">
+
+                            試作・小ロット品の場合は2〜3週間、量産品の場合は数量やデザインによって異なりますが、およそ1ヶ月〜が目安です。お急ぎの場合は別途ご相談ください。
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- カテゴリ4：発注・その他について -->
+
+        <div class="mb-12">
+
+            <h3 class="text-[#00A3FF] font-bold text-xl mb-6 flex items-center">
+
+                <i class="fa-solid fa-comments mr-3"></i>発注・その他について
+
+            </h3>
+
+            <div class="space-y-4">
+
+                <!-- Q12 -->
+
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-[#00A3FF]/30 transition-all">
+
+                    <button class="flex items-center justify-between w-full p-6 text-left cursor-pointer" onclick="toggleAccordion(this)">
+
+                        <span class="text-lg font-bold text-white group-hover:text-[#00A3FF] transition-colors">Q. 日本語でのやり取りは可能ですか？</span>
+
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+
+                    </button>
+
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5">
+
+                            はい、可能です。専門の日本人スタッフが常駐しており、お問い合わせから納品まで日本語でスムーズにサポートいたしますのでご安心ください。
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Q13 -->
+
+                <div class="group bg-[#1a1a1a] rounded-xl overflow-hidden border border-white/5 hover:border-[#00A3FF]/30 transition-all">
+
+                    <button class="flex items-center justify-between w-full p-6 text-left cursor-pointer" onclick="toggleAccordion(this)">
+
+                        <span class="text-lg font-bold text-white group-hover:text-[#00A3FF] transition-colors">Q. サンプル品の作成は可能ですか？</span>
+
+                        <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+
+                    </button>
+
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+
+                        <div class="p-6 pt-0 text-gray-400 leading-relaxed border-t border-white/5">
+
+                            はい、可能です。量産前に必ずサンプルを作成し、お客様にご確認いただいております。ご納得いただいた上で量産へ移行いたします。
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mt-16 border-t border-gray-800 pt-12">
+
+            <div class="bg-[#1e212b] rounded-2xl border border-[#00A3FF]/20 overflow-hidden relative">
+
+                <!-- 装飾 -->
+
+                <div class="absolute top-0 right-0 text-[#00A3FF]/10 text-9xl -mt-4 -mr-4 transform rotate-12 pointer-events-none">
+
+                    <i class="fa-solid fa-comments"></i>
+
+                </div>
+
+                <div class="p-8 md:p-10">
+
+                    <h3 class="text-[#00A3FF] font-bold text-lg mb-4 flex items-center">
+
+                        <span class="bg-[#00A3FF]/20 px-3 py-1 rounded-full text-xs mr-3">SPECIAL</span>
+
+                        Q. なぜ今まで日本でビジネスをしていなかったのですか？
+
+                    </h3>
+
+                    <div class="text-gray-300 leading-relaxed space-y-4">
+
+                        <p class="font-medium">
+
+                            A. 中国市場の勢いが凄すぎて、日本を向く余裕がありませんでした（汗）。
+
+                        </p>
+
+                        <p class="text-sm text-gray-400">
+
+                            おかげさまで技術と生産スピードは極限まで鍛え上げられました。いわば「中国という精神と時の部屋」で修行を積んで、満を持して日本に帰ってきた状態です。
+
+                            その実力は折り紙付きで、すでに日本を代表する大手メーカー様からもオファーをいただき、製造を開始しています。「無名だけど凄い会社」をお探しなら、まさに弊社がそれです！
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+                
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Bottom CTA -->
+    <section class="py-20 bg-gradient-to-r from-primary to-blue-600 text-white relative">
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">まずは写真を撮って、<br>無料見積もりへ。</h2>
+            <p class="text-xl mb-8 opacity-90">2営業日以内に概算費用をお伝えします</p>
+            <a href="contact.html" class="bg-white text-primary px-12 py-4 !rounded-button text-lg font-semibold hover:bg-gray-100 transition-all duration-300 glow-effect whitespace-nowrap">
+                見積もり・相談フォームへ進む
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                <a href="index.html" class="flex items-center w-max">
+                    <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto">
+                </a>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-center">お問い合わせ</h4>
+                    <div class="space-y-2 text-sm text-gray-400 text-center">
+                        <p>TEL: ddh.hydra@gmail.com</p>
+                        <p>所在地: ベトナムホーチミン</p>
+                        <p>定休日: 土日祝</p>
+                    </div>
+                    <a href="contact.html" class="mt-4 inline-block bg-primary hover:bg-blue-700 px-6 py-2 !rounded-button whitespace-nowrap transition-colors text-white font-bold">
+                        お問い合わせフォームへ
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 高級水圧転写サービス. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script id="accordion-functionality">
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+            
+            accordionTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.accordion-icon');
+                    
+                    const isActive = content.classList.contains('active');
+                    
+                    document.querySelectorAll('.accordion-content').forEach(c => {
+                        c.classList.remove('active');
+                    });
+                    document.querySelectorAll('.accordion-icon').forEach(i => {
+                        i.className = 'ri-add-line accordion-icon';
+                    });
+                    
+                    if (!isActive) {
+                        content.classList.add('active');
+                        icon.className = 'ri-subtract-line accordion-icon';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
