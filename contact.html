@@ -527,6 +527,7 @@
             const form = document.getElementById('main-form');
 
             const formData = new FormData(form);
+            formData.append('form-name', form.getAttribute('name'));
 
             // 送信ボタンを無効化（連打防止）
 
