@@ -71,10 +71,6 @@
             font-family: 'Noto Sans JP', sans-serif;
         }
 
-        :where([class^="ri-"])::before {
-            content: "\f3c2";
-        }
-
         .hero-bg {
             background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(31, 41, 55, 0.8)),
                 url('image/materials_hero.png');
@@ -90,7 +86,7 @@
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html" class="flex items-center">
-                <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto">
+                <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto" width="150" height="40">
             </a>
 
             <!-- PC Menu -->
@@ -174,121 +170,77 @@
             </h1>
             <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
                 プラスチックから金属、木材まで。<br>
-                あらゆる素材を、理想のデザインへ生まれ変わらせます。
+                あらゆる素材に、新たな価値とデザインを吹き込みます。
             </p>
         </div>
     </section>
 
     <!-- Material Compatibility -->
     <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">対応素材一覧</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    基本的には「水に浸けられる」「塗装ができる」硬質素材であれば施工可能です。<br>
-                    素材に応じた適切な下地処理（プライマー）を行うことで、高い密着性を実現します。
-                </p>
-            </div>
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">加工可能な素材</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                基本的には「水に浸けられるもの」「塗装ができるもの」であれば施工可能です。<br>
+                素材に合わせた下地処理を行うことで、高い密着性と耐久性を実現します。
+            </p>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Plastic -->
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100" data-aos="fade-up">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-12 h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center text-2xl mr-4">
-                            <i class="ri-box-3-line"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900">プラスチック・樹脂</h3>
-                    </div>
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-center text-gray-700">
-                            <i class="ri-check-line text-green-500 mr-2"></i>
-                            <span class="font-bold">ABS樹脂</span>（最も推奨）
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="ri-check-line text-green-500 mr-2"></i>
-                            <span class="font-bold">PP（ポリプロピレン）</span>
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="ri-check-line text-green-500 mr-2"></i>
-                            <span>PC（ポリカーボネート）</span>
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="ri-check-line text-green-500 mr-2"></i>
-                            <span>アクリル</span>
-                        </li>
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl text-primary mb-4"><i class="ri-recycle-line"></i></div>
+                    <h3 class="font-bold text-xl mb-2">樹脂・プラスチック</h3>
+                    <p class="text-sm text-gray-600 mb-4">ABS, PP, PC, PVC, アクリルなど</p>
+                    <ul class="text-sm text-gray-500 space-y-1 list-disc list-inside">
+                        <li>自動車内装パーツ</li>
+                        <li>家電製品の筐体</li>
+                        <li>スマートフォンケース</li>
+                        <li>ゲームコントローラー</li>
                     </ul>
-                    <p class="text-sm text-gray-600 bg-white p-4 rounded-lg">
-                        <span class="font-bold text-primary">Point:</span>
-                        最も水圧転写に適した素材です。特にABSは密着性が高く、自動車内装パーツなどで広く使われています。PPなどは専用プライマーで処理します。
-                    </p>
                 </div>
 
                 <!-- Metal -->
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-12 h-12 bg-gray-200 text-gray-700 rounded-full flex items-center justify-center text-2xl mr-4">
-                            <i class="ri-hammer-line"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900">金属</h3>
-                    </div>
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-center text-gray-700">
-                            <i class="ri-check-line text-green-500 mr-2"></i>
-                            <span class="font-bold">アルミニウム</span>
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="ri-check-line text-green-500 mr-2"></i>
-                            <span class="font-bold">ステンレス</span>
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="ri-check-line text-green-500 mr-2"></i>
-                            <span>鉄・スチール</span>
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="ri-check-line text-green-500 mr-2"></i>
-                            <span>ダイキャスト</span>
-                        </li>
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl text-primary mb-4"><i class="ri-tools-line"></i></div>
+                    <h3 class="font-bold text-xl mb-2">金属</h3>
+                    <p class="text-sm text-gray-600 mb-4">アルミ, ステンレス, 鉄, 真鍮など</p>
+                    <ul class="text-sm text-gray-500 space-y-1 list-disc list-inside">
+                        <li>自動車ホイール</li>
+                        <li>バイクのタンク</li>
+                        <li>タンブラー・ボトル</li>
+                        <li>金属製家具の脚</li>
                     </ul>
-                    <p class="text-sm text-gray-600 bg-white p-4 rounded-lg">
-                        <span class="font-bold text-primary">Point:</span>
-                        防錆処理とプライマー処理が必須です。ホイールやタンブラーなど、金属の質感を生かしたカスタムが可能です。
-                    </p>
                 </div>
 
-                <!-- Others -->
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-2xl mr-4">
-                            <i class="ri-apps-line"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900">その他素材</h3>
-                    </div>
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-center text-gray-700">
-                            <i class="ri-check-line text-green-500 mr-2"></i>
-                            <span class="font-bold">3Dプリンター造形品</span>
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="ri-check-line text-green-500 mr-2"></i>
-                            <span>木材・MDF</span>
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="ri-check-line text-green-500 mr-2"></i>
-                            <span>ガラス・セラミック</span>
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="ri-check-line text-green-500 mr-2"></i>
-                            <span>FRP・カーボン</span>
-                        </li>
+                <!-- Glass / Ceramic -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl text-primary mb-4"><i class="ri-cup-line"></i></div>
+                    <h3 class="font-bold text-xl mb-2">ガラス・陶器</h3>
+                    <p class="text-sm text-gray-600 mb-4">ガラス瓶, セラミック, タイルなど</p>
+                    <ul class="text-sm text-gray-500 space-y-1 list-disc list-inside">
+                        <li>化粧品のボトル</li>
+                        <li>インテリア雑貨</li>
+                        <li>マグカップ</li>
+                        <li>照明器具のシェード</li>
                     </ul>
-                    <p class="text-sm text-gray-600 bg-white p-4 rounded-lg">
-                        <span class="font-bold text-primary">Point:</span>
-                        幅広い業界で採用されています。
-                    </p>
                 </div>
+
+                <!-- Wood / Others -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-4xl text-primary mb-4"><i class="ri-tree-line"></i></div>
+                    <h3 class="font-bold text-xl mb-2">木材・その他</h3>
+                    <p class="text-sm text-gray-600 mb-4">木工製品, MDF, カーボンなど</p>
+                    <ul class="text-sm text-gray-500 space-y-1 list-disc list-inside">
+                        <li>楽器（ギターなど）</li>
+                        <li>家具・建材</li>
+                        <li>スポーツ用品</li>
+                        <li>3Dプリント造形物</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 p-4 bg-blue-50 text-blue-800 rounded-lg text-sm text-center">
+                <i class="ri-information-line mr-1"></i>
+                <strong>ご注意：</strong> 水に浮いてしまうほど軽いもの、水で変形・破損する素材（紙、布、非防水の電子機器本体など）には施工できません。
             </div>
         </div>
     </section>
@@ -296,80 +248,99 @@
     <!-- Industries / Applications -->
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">主な活用事例</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    自動車から日用品まで、あらゆる製品に付加価値を与えます。
-                </p>
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">主な活用事例</h2>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div data-aos="fade-right">
+                    <img src="image/materials_automotive.png" alt="自動車・バイク部品への施工例"
+                        class="rounded-2xl shadow-lg w-full h-auto object-cover" width="600" height="400">
+                </div>
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center">
+                        <span
+                            class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mr-3 text-lg"><i
+                                class="ri-roadster-line"></i></span>
+                        自動車・バイク部品
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        インパネ、コンソールボックス、ドアスイッチパネルなどの内装パーツから、ドアミラーカバー、ホイール、グリルなどの外装パーツまで幅広く対応。純正にはないカーボン調やウッド調で、高級感やスポーティさを演出します。
+                    </p>
+                    <ul class="grid grid-cols-2 gap-2 text-sm text-gray-500">
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>内装パネル</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>ホイール</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>エンブレム</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>ヘルメット</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Automotive -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100" data-aos="fade-up">
-                    <img src="image/materials_automotive.png" alt="自動車部品" loading="lazy"
-                        class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">自動車・バイク部品</h3>
-                        <p class="text-gray-600 mb-4">
-                            内装パネル、ミラーカバー、ホイールなど。<br>
-                            耐候性・耐熱性のあるトップコートで仕上げるため、外装パーツにも対応可能です。
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">木目調</span>
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">カーボン調</span>
-                        </div>
-                    </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="md:order-2" data-aos="fade-left">
+                    <img src="image/materials_home.png" alt="家電・インテリアへの施工例"
+                        class="rounded-2xl shadow-lg w-full h-auto object-cover" width="600" height="400">
                 </div>
-
-                <!-- Home Appliances -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <img src="image/materials_home.png" alt="家電製品" loading="lazy" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">家電・日用品</h3>
-                        <p class="text-gray-600 mb-4">
-                            ドライヤー、掃除機、スマホケース、ゲームコントローラーなど。<br>
-                            プラスチック製品の質感を劇的に向上させます。
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">大理石調</span>
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">幾何学模様</span>
-                        </div>
-                    </div>
+                <div class="md:order-1" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center">
+                        <span
+                            class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mr-3 text-lg"><i
+                                class="ri-home-wifi-line"></i></span>
+                        家電・インテリア
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        エアコンのパネル、スイッチプレート、リモコン、照明器具など、身近な製品をインテリアに合わせてカスタマイズ。無機質なプラスチック製品も、木目調や大理石調にすることで空間に馴染むデザインに生まれ変わります。
+                    </p>
+                    <ul class="grid grid-cols-2 gap-2 text-sm text-gray-500">
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>スイッチカバー</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>エアコンパネル</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>家具パーツ</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>キッチン用品</li>
+                    </ul>
                 </div>
+            </div>
 
-                <!-- Sports -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100" data-aos="fade-up"
-                    data-aos-delay="200">
-                    <img src="image/materials_hobby.png" alt="スポーツ・アウトドア" loading="lazy"
-                        class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">スポーツ・アウトドア</h3>
-                        <p class="text-gray-600 mb-4">
-                            釣具（リール、ルアー）、ヘルメット、ゴルフシャフトなど。<br>
-                            複雑な曲面でも継ぎ目のない美しい仕上がりが可能です。
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">迷彩柄</span>
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">カーボン調</span>
-                        </div>
-                    </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div data-aos="fade-right">
+                    <img src="image/materials_hobby.png" alt="スポーツ・ホビー用品への施工例"
+                        class="rounded-2xl shadow-lg w-full h-auto object-cover" width="600" height="400">
                 </div>
+                <div data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center">
+                        <span
+                            class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mr-3 text-lg"><i
+                                class="ri-gamepad-line"></i></span>
+                        スポーツ・ホビー
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        釣具（ルアー、リール）、サバイバルゲーム用品（エアガン、迷彩装備）、ゲームコントローラー、ドローンなど。趣味の道具を自分だけのオリジナルデザインに。迷彩柄やカーボン柄が特に人気です。
+                    </p>
+                    <ul class="grid grid-cols-2 gap-2 text-sm text-gray-500">
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>ルアー・釣具</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>エアガン</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>コントローラー</li>
+                        <li class="flex items-center"><i class="ri-check-line text-primary mr-2"></i>ドローン</li>
+                    </ul>
+                </div>
+            </div>
 
-                <!-- Others -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100" data-aos="fade-up"
-                    data-aos-delay="300">
-                    <img src="image/materials_industrial.png" alt="その他" loading="lazy" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">その他・ノベルティ</h3>
-                        <p class="text-gray-600 mb-4">
-                            ボトル、タンブラー、眼鏡フレーム、楽器など。<br>
-                            小ロットのオリジナルグッズ製作にも最適です。
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">木目調</span>
-                            <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">金属調</span>
-                        </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="md:order-2" data-aos="fade-left">
+                    <img src="image/materials_industrial.png" alt="その他・ノベルティへの施工例"
+                        class="rounded-2xl shadow-lg w-full h-auto object-cover" width="600" height="400">
+                </div>
+                <div class="md:order-1" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center">
+                        <span
+                            class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mr-3 text-lg"><i
+                                class="ri-gift-line"></i></span>
+                        その他・ノベルティ
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        企業のノベルティグッズ、スマートフォンのケース、眼鏡フレーム、義肢装具など、アイデア次第で無限の可能性があります。小ロットからの試作も可能ですので、新商品の開発などにもご活用ください。
+                    </p>
+                    <div class="mt-4">
+                        <a href="works.html" class="text-primary font-bold hover:underline flex items-center">
+                            実際の施工事例を見る <i class="ri-arrow-right-line ml-1"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -379,9 +350,10 @@
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-r from-primary to-blue-600 text-white relative overflow-hidden">
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10" data-aos="zoom-in">
-            <h2 class="text-3xl md:text-5xl font-bold mb-6">「この素材にはできる？」<br>その疑問、解決します。</h2>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">「これにも転写できる？」<br>その疑問、解決します。</h2>
             <p class="text-lg md:text-xl mb-8 opacity-90">
-                素材の写真や図面をお送りいただければ、<br class="md:hidden">施工の可否や概算見積もりを迅速に回答いたします。
+                素材や形状の写真を送っていただければ、施工の可否や概算のお見積もりをいたします。<br>
+                まずはお気軽にお問い合わせください。
             </p>
             <a href="contact.html"
                 class="bg-white text-primary hover:bg-gray-100 px-12 py-4 !rounded-button text-xl font-bold whitespace-nowrap transition-colors shadow-lg inline-block transform hover:-translate-y-1">
@@ -395,7 +367,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center justify-center gap-8">
                 <a href="index.html" class="flex items-center w-max">
-                    <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto">
+                    <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto" width="150" height="40">
                 </a>
 
                 <div>

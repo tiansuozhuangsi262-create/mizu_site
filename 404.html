@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ページが見つかりません | DDP HYDRO</title>
+    <meta name="description" content="お探しのページは見つかりませんでした。">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Pacifico&display=swap');
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#00A3FF', secondary: '#121212' },
+                    borderRadius: { DEFAULT: '8px', 'full': '9999px' }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-[#121212] text-gray-300 pt-20 flex flex-col min-h-screen">
+    <!-- Navigation (Simplified) -->
+    <nav class="bg-[#121212] text-white fixed w-full top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center">
+                <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto" width="150" height="40">
+            </a>
+            <a href="index.html"
+                class="bg-[#00A3FF] text-white px-5 py-2 rounded-full hover:bg-blue-600 transition-colors font-bold text-sm">
+                トップページへ
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center px-6 py-20">
+        <div class="text-center max-w-2xl mx-auto" data-aos="zoom-in">
+            <h1 class="text-9xl font-bold text-[#00A3FF] mb-4 opacity-20">404</h1>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 -mt-12 relative z-10">Page Not Found</h2>
+            <p class="text-xl text-gray-400 mb-8">
+                お探しのページは見つかりませんでした。<br>
+                削除されたか、URLが変更された可能性があります。
+            </p>
+            <a href="index.html"
+                class="inline-block bg-[#00A3FF] hover:bg-[#0088CC] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all transform hover:scale-105">
+                トップページに戻る
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
+            <p>&copy; 2024 DDP HYDRO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+    </script>
+</body>
+
+</html>

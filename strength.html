@@ -71,10 +71,6 @@
             font-family: 'Noto Sans JP', sans-serif;
         }
 
-        :where([class^="ri-"])::before {
-            content: "\f3c2";
-        }
-
         .hero-bg {
             background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(31, 41, 55, 0.8)),
                 url('image/strength_hero.png');
@@ -90,7 +86,7 @@
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <!-- Logo -->
             <a href="index.html" class="flex items-center">
-                <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto">
+                <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto" width="150" height="40">
             </a>
 
             <!-- PC Menu -->
@@ -169,13 +165,12 @@
     <!-- Hero Section -->
     <section class="hero-bg py-32 text-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-aos="fade-up">
-                圧倒的な<span class="text-primary">生産能力</span>と<br>
-                日本品質の<span class="text-primary">管理体制</span>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight" data-aos="fade-up">
+                DDP HYDROの強み
             </h1>
             <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                ベトナム最大級の設備と、日本人スタッフによる徹底した品質管理。<br class="hidden md:block">
-                コストとクオリティの両立を実現します。
+                ベトナム工場のコストメリットと、日本品質の管理体制。<br>
+                大量生産から小ロットまで、お客様のニーズに柔軟にお応えします。
             </p>
         </div>
     </section>
@@ -183,33 +178,33 @@
     <!-- Strength 1: Scale -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div data-aos="fade-right">
-                    <div class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full font-bold mb-4">
-                        STRENGTH 01
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-                        20mライン×3本。<br>
-                        圧倒的な生産能力
-                    </h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        ベトナム工場には全長20mの自動生産ラインを3本設置。
-                        月産10万個以上の大量生産にも迅速に対応可能です。
-                        急な増産や大規模なロットも、余裕を持って消化できるキャパシティを誇ります。
-                    </p>
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-gray-600 font-bold">月間生産能力</span>
-                            <span class="text-2xl font-bold text-primary">100,000個〜</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5">
-                            <div class="bg-primary h-2.5 rounded-full" style="width: 90%"></div>
-                        </div>
-                    </div>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2" data-aos="fade-right">
+                    <img src="image/strength_line.png" alt="大規模な生産ライン"
+                        class="rounded-2xl shadow-lg w-full h-auto object-cover" width="600" height="400">
                 </div>
-                <div class="relative" data-aos="fade-left">
-                    <img src="image/strength_line.png" alt="20m生産ライン" loading="lazy"
-                        class="w-full h-auto rounded-2xl shadow-2xl">
+                <div class="w-full md:w-1/2" data-aos="fade-left">
+                    <div class="text-primary font-bold text-xl mb-2">STRENGTH 01</div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">圧倒的な生産能力<br>月産20万個以上</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        ベトナム・ホーチミン近郊に構える自社工場は、広大な敷地と最新の設備を有しています。
+                        自動化された生産ラインと熟練スタッフの連携により、月産20万個以上の安定した生産能力を実現。
+                        急な増産や大規模なロットにも迅速に対応可能です。
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700">
+                            <i class="ri-checkbox-circle-fill text-primary mr-2 text-xl"></i>
+                            <span>自動転写ラインによる高速生産</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="ri-checkbox-circle-fill text-primary mr-2 text-xl"></i>
+                            <span>24時間稼働体制も可能</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="ri-checkbox-circle-fill text-primary mr-2 text-xl"></i>
+                            <span>コンテナ単位での出荷に対応</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -218,36 +213,31 @@
     <!-- Strength 2: Quality -->
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="order-2 lg:order-1" data-aos="fade-right">
-                    <img src="image/strength_quality.png" alt="品質管理" loading="lazy"
-                        class="w-full h-auto rounded-2xl shadow-2xl">
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                <div class="w-full md:w-1/2" data-aos="fade-left">
+                    <img src="image/strength_quality.png" alt="徹底した品質検査"
+                        class="rounded-2xl shadow-lg w-full h-auto object-cover" width="600" height="400">
                 </div>
-                <div class="order-1 lg:order-2" data-aos="fade-left">
-                    <div class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full font-bold mb-4">
-                        STRENGTH 02
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-                        日本人スタッフ常駐。<br>
-                        安心の品質管理
-                    </h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        海外生産で最も懸念される「品質」の問題。
-                        当社では日本人技術者が現地に常駐し、日本の厳しい基準に基づいた品質管理を行っています。
-                        コミュニケーションの不安もなく、安心してお任せいただけます。
+                <div class="w-full md:w-1/2" data-aos="fade-right">
+                    <div class="text-primary font-bold text-xl mb-2">STRENGTH 02</div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">日本人スタッフ常駐による<br>徹底した品質管理</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        海外生産で懸念される品質リスクを払拭するため、日本人管理者が常駐し、日本基準での品質管理を徹底しています。
+                        工程ごとの検査はもちろん、出荷前の最終検品まで厳格なチェック体制を敷いており、
+                        不良品の流出を未然に防ぎます。
                     </p>
-                    <ul class="space-y-4">
-                        <li class="flex items-center space-x-3">
-                            <i class="ri-shield-check-line text-primary text-xl"></i>
-                            <span class="font-bold">日本人スタッフによる検品</span>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700">
+                            <i class="ri-checkbox-circle-fill text-primary mr-2 text-xl"></i>
+                            <span>ISO基準に準拠した管理体制</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <i class="ri-shield-check-line text-primary text-xl"></i>
-                            <span class="font-bold">日本語でのスムーズな対応</span>
+                        <li class="flex items-center text-gray-700">
+                            <i class="ri-checkbox-circle-fill text-primary mr-2 text-xl"></i>
+                            <span>日本語でのスムーズなコミュニケーション</span>
                         </li>
-                        <li class="flex items-center space-x-3">
-                            <i class="ri-shield-check-line text-primary text-xl"></i>
-                            <span class="font-bold">不良率の徹底的な低減</span>
+                        <li class="flex items-center text-gray-700">
+                            <i class="ri-checkbox-circle-fill text-primary mr-2 text-xl"></i>
+                            <span>定期的なスタッフ教育と技術指導</span>
                         </li>
                     </ul>
                 </div>
@@ -258,32 +248,33 @@
     <!-- Strength 3: Flexibility -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div data-aos="fade-right">
-                    <div class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full font-bold mb-4">
-                        STRENGTH 03
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-                        手作業による<br>
-                        小ロット・試作対応
-                    </h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        自動ラインだけでなく、熟練職人による手作業ブースも完備。
-                        1個からの試作や、複雑な形状の小ロット生産にも柔軟に対応します。
-                        「まずは試作を見てみたい」というご要望にもお応えします。
-                    </p>
-                    <div class="bg-gray-100 p-6 rounded-xl border-l-4 border-primary">
-                        <p class="font-bold text-gray-800 mb-2">こんなご要望に最適です</p>
-                        <ul class="text-gray-600 space-y-2 text-sm">
-                            <li>・展示会用のプロトタイプを作りたい</li>
-                            <li>・限定生産のカスタムパーツを作りたい</li>
-                            <li>・多品種小ロットで生産したい</li>
-                        </ul>
-                    </div>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2" data-aos="fade-right">
+                    <img src="image/strength_robot_manual.png" alt="手作業による丁寧な仕上げ"
+                        class="rounded-2xl shadow-lg w-full h-auto object-cover" width="600" height="400">
                 </div>
-                <div class="relative" data-aos="fade-left">
-                    <img src="image/strength_robot_manual.png" alt="手作業・小ロット対応" loading="lazy"
-                        class="w-full h-auto rounded-2xl shadow-2xl">
+                <div class="w-full md:w-1/2" data-aos="fade-left">
+                    <div class="text-primary font-bold text-xl mb-2">STRENGTH 03</div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">小ロットから量産まで<br>柔軟な対応力</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        自動ラインだけでなく、熟練工による手作業ラインも併設。
+                        これにより、機械では難しい複雑な形状の製品や、小ロットの試作品、多品種少量生産にも柔軟に対応できます。
+                        「まずは試作を1個作りたい」というご要望も大歓迎です。
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700">
+                            <i class="ri-checkbox-circle-fill text-primary mr-2 text-xl"></i>
+                            <span>試作・サンプル作成最短3日</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="ri-checkbox-circle-fill text-primary mr-2 text-xl"></i>
+                            <span>多品種少量生産に対応</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="ri-checkbox-circle-fill text-primary mr-2 text-xl"></i>
+                            <span>複雑形状の手作業転写</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -292,28 +283,33 @@
     <!-- Strength 4: Original Design -->
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="order-2 lg:order-1" data-aos="fade-right">
-                    <img src="image/strength_films.png" alt="オリジナルデザインフィルム" loading="lazy"
-                        class="w-full h-auto rounded-2xl shadow-2xl">
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                <div class="w-full md:w-1/2" data-aos="fade-left">
+                    <img src="image/strength_films.png" alt="豊富なフィルムデザイン"
+                        class="rounded-2xl shadow-lg w-full h-auto object-cover" width="600" height="400">
                 </div>
-                <div class="order-1 lg:order-2" data-aos="fade-left">
-                    <div class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full font-bold mb-4">
-                        STRENGTH 04
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-                        フィルムは完全受注生産。<br>
-                        理想のデザインを形に
-                    </h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                        既製品のパターンだけでなく、お客様オリジナルのデザインフィルムの作成も可能です。
-                        素材の選定からデザインの調整まで、幅広く対応いたします。
-                        他社にはない、貴社だけの付加価値を創造します。
+                <div class="w-full md:w-1/2" data-aos="fade-right">
+                    <div class="text-primary font-bold text-xl mb-2">STRENGTH 04</div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">オリジナルデザインの<br>フィルム開発</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        既存のパターンだけでなく、お客様独自のオリジナルデザインフィルムの作成も承ります。
+                        企業ロゴ、キャラクター、特定のテクスチャなど、データをご支給いただければ、
+                        世界に一つだけの水圧転写フィルムを製造し、製品に加工いたします。
                     </p>
-                    <a href="contact.html"
-                        class="inline-block bg-primary text-white hover:bg-blue-600 px-8 py-3 rounded-full font-bold transition-colors shadow-lg">
-                        オリジナルデザインについて相談する
-                    </a>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700">
+                            <i class="ri-checkbox-circle-fill text-primary mr-2 text-xl"></i>
+                            <span>版下作成からサポート</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="ri-checkbox-circle-fill text-primary mr-2 text-xl"></i>
+                            <span>色味の微調整も可能</span>
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="ri-checkbox-circle-fill text-primary mr-2 text-xl"></i>
+                            <span>著作権・権利関係もクリアに</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -322,9 +318,10 @@
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-r from-primary to-blue-600 text-white relative overflow-hidden">
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10" data-aos="zoom-in">
-            <h2 class="text-3xl md:text-5xl font-bold mb-6">「この素材にはできる？」<br>その疑問、解決します。</h2>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">コストダウンと品質向上を<br>同時に実現しませんか？</h2>
             <p class="text-lg md:text-xl mb-8 opacity-90">
-                素材の写真や図面をお送りいただければ、<br class="md:hidden">施工の可否や概算見積もりを迅速に回答いたします。
+                お見積もりは無料です。現在の調達コストと比較してみてください。<br>
+                DDP HYDROが、貴社のビジネスを強力にサポートします。
             </p>
             <a href="contact.html"
                 class="bg-white text-primary hover:bg-gray-100 px-12 py-4 !rounded-button text-xl font-bold whitespace-nowrap transition-colors shadow-lg inline-block transform hover:-translate-y-1">
@@ -338,7 +335,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center justify-center gap-8">
                 <a href="index.html" class="flex items-center w-max">
-                    <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto">
+                    <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto" width="150" height="40">
                 </a>
 
                 <div>
