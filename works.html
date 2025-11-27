@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="DAuudNcslqNA0lsBZY2HDSimgwjyV_t2zAK7etwS6Fg" />
     <title>施工事例 - 水圧転写技術の実績ギャラリー</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -35,22 +38,29 @@
         }
     </script>
     <style>
-        body { font-family: 'Noto Sans JP', sans-serif; }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
         :where([class^="ri-"])::before {
             content: "\f3c2";
         }
+
         .filter-button.active {
             background: linear-gradient(135deg, #1e40af, #3b82f6);
             color: white;
             box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
         }
+
         .gallery-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .gallery-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
+
         .lightbox {
             display: none;
             position: fixed;
@@ -63,19 +73,23 @@
             align-items: center;
             justify-content: center;
         }
+
         .lightbox.active {
             display: flex;
         }
+
         .lightbox-content {
             max-width: 90vw;
             max-height: 90vh;
             position: relative;
         }
+
         .lightbox img {
             max-width: 100%;
             max-height: 100%;
             border-radius: 12px;
         }
+
         .zoom-overlay {
             position: absolute;
             top: 0;
@@ -90,21 +104,26 @@
             transition: opacity 0.3s ease;
             border-radius: 16px;
         }
+
         .gallery-card:hover .zoom-overlay {
             opacity: 1;
         }
+
         .before-after-container {
             position: relative;
             overflow: hidden;
             border-radius: 16px;
         }
+
         .before-after-slider {
             position: relative;
             width: 100%;
             height: 300px;
             overflow: hidden;
         }
-        .before-image, .after-image {
+
+        .before-image,
+        .after-image {
             position: absolute;
             top: 0;
             left: 0;
@@ -112,10 +131,12 @@
             height: 100%;
             object-fit: cover;
         }
+
         .after-image {
             clip-path: inset(0 50% 0 0);
             transition: clip-path 0.3s ease;
         }
+
         .slider-handle {
             position: absolute;
             top: 0;
@@ -127,6 +148,7 @@
             z-index: 10;
             transform: translateX(-50%);
         }
+
         .slider-handle::before {
             content: '';
             position: absolute;
@@ -139,69 +161,77 @@
             border-radius: 50%;
             transform: translate(-50%, -50%);
         }
+
         .category-stats {
             background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(59, 130, 246, 0.1));
         }
     </style>
 </head>
+
 <body class="bg-white pt-20">
     <!-- Global Navigation Bar -->
-<nav class="bg-[#121212] text-white fixed w-full top-0 z-50 shadow-md">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <!-- Logo -->
-        <a href="index.html" class="flex items-center">
-            <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto">
-        </a>
-
-        <!-- PC Menu -->
-        <div class="hidden md:flex space-x-8 items-center">
-            <a href="index.html" class="hover:text-[#00A3FF] transition-colors">ホーム</a>
-            <a href="works.html" class="hover:text-[#00A3FF] transition-colors">施工事例・技術</a>
-            <a href="service.html" class="hover:text-[#00A3FF] transition-colors">料金・流れ</a>
-            <a href="service.html#faq" class="hover:text-[#00A3FF] transition-colors">よくある質問</a>
-            <a href="contact.html" class="bg-[#00A3FF] text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors whitespace-nowrap font-bold shadow-lg">
-                お問い合わせ
+    <nav class="bg-[#121212] text-white fixed w-full top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center">
+                <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto">
             </a>
+
+            <!-- PC Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-[#00A3FF] transition-colors">ホーム</a>
+                <a href="works.html" class="hover:text-[#00A3FF] transition-colors">施工事例・技術</a>
+                <a href="service.html" class="hover:text-[#00A3FF] transition-colors">料金・流れ</a>
+                <a href="service.html#faq" class="hover:text-[#00A3FF] transition-colors">よくある質問</a>
+                <a href="contact.html"
+                    class="bg-[#00A3FF] text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors whitespace-nowrap font-bold shadow-lg">
+                    お問い合わせ
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
         </div>
 
-        <!-- Mobile Menu Button (Hamburger) -->
-        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-            <i class="fas fa-bars text-2xl"></i>
-        </button>
-    </div>
-
-    <!-- Mobile Menu Content (Hidden by default) -->
-    <div id="mobile-menu" class="hidden md:hidden bg-[#1a1a1a] pb-4">
-        <div class="flex flex-col items-center space-y-4 py-4">
-            <a href="index.html" class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">ホーム</a>
-            <a href="works.html" class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">施工事例・技術</a>
-            <a href="service.html" class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">料金・流れ</a>
-            <a href="service.html#faq" class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">よくある質問</a>
-            <a href="contact.html" class="block bg-[#00A3FF] text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors whitespace-nowrap font-bold w-3/4 text-center mt-2">
-                お問い合わせ
-            </a>
+        <!-- Mobile Menu Content (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#1a1a1a] pb-4">
+            <div class="flex flex-col items-center space-y-4 py-4">
+                <a href="index.html"
+                    class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">ホーム</a>
+                <a href="works.html"
+                    class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">施工事例・技術</a>
+                <a href="service.html"
+                    class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">料金・流れ</a>
+                <a href="service.html#faq"
+                    class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">よくある質問</a>
+                <a href="contact.html"
+                    class="block bg-[#00A3FF] text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors whitespace-nowrap font-bold w-3/4 text-center mt-2">
+                    お問い合わせ
+                </a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-            const icon = mobileMenuButton.querySelector('i');
-            if (mobileMenu.classList.contains('hidden')) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            }
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileMenuButton.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
         });
-    });
-</script>
+    </script>
     <!-- Breadcrumb -->
     <section class="bg-gray-50 pt-24 pb-8">
         <div class="max-w-7xl mx-auto px-6">
@@ -245,15 +275,16 @@
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div id="gallery-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
+
                 <!-- Automotive Cases -->
-                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer" data-category="automotive">
+                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
+                    data-category="automotive">
                     <div class="before-after-container">
                         <div class="before-after-slider">
-                            <img src="https://readdy.ai/api/search-image?query=Automotive%20dashboard%20water%20transfer%20printing%20before%20plain%20black%20plastic%20dashboard%2C%20professional%20automotive%20interior%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20surface%20texture&width=400&height=300&seq=gallery001&orientation=landscape" 
-                                 alt="ダッシュボード施工前" class="before-image">
-                            <img src="https://readdy.ai/api/search-image?query=Automotive%20dashboard%20after%20water%20transfer%20printing%20with%20beautiful%20carbon%20fiber%20pattern%2C%20luxury%20car%20interior%20finish%2C%20professional%20photography%2C%20dramatic%20lighting%2C%20high-end%20texture%20detail&width=400&height=300&seq=gallery002&orientation=landscape" 
-                                 alt="ダッシュボード施工後" class="after-image">
+                            <img src="https://readdy.ai/api/search-image?query=Automotive%20dashboard%20water%20transfer%20printing%20before%20plain%20black%20plastic%20dashboard%2C%20professional%20automotive%20interior%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20surface%20texture&width=400&height=300&seq=gallery001&orientation=landscape"
+                                alt="ダッシュボード施工前" class="before-image">
+                            <img src="https://readdy.ai/api/search-image?query=Automotive%20dashboard%20after%20water%20transfer%20printing%20with%20beautiful%20carbon%20fiber%20pattern%2C%20luxury%20car%20interior%20finish%2C%20professional%20photography%2C%20dramatic%20lighting%2C%20high-end%20texture%20detail&width=400&height=300&seq=gallery002&orientation=landscape"
+                                alt="ダッシュボード施工後" class="after-image">
                             <div class="slider-handle"></div>
                         </div>
                         <div class="zoom-overlay">
@@ -261,7 +292,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <span class="inline-block bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-3">自動車部品</span>
+                        <span
+                            class="inline-block bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-3">自動車部品</span>
                         <h3 class="text-xl font-bold mb-2 text-gray-900">ダッシュボード</h3>
                         <p class="text-gray-600 mb-4">カーボンファイバー調パターンで高級感を演出。既存の内装との調和を重視した施工。</p>
                         <div class="text-sm text-gray-500 text-right">
@@ -270,13 +302,14 @@
                     </div>
                 </div>
 
-                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer" data-category="automotive">
+                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
+                    data-category="automotive">
                     <div class="before-after-container">
                         <div class="before-after-slider">
-                            <img src="https://readdy.ai/api/search-image?query=Car%20steering%20wheel%20before%20water%20transfer%20printing%20plain%20black%20leather%20surface%2C%20automotive%20interior%20photography%2C%20professional%20studio%20lighting%2C%20detailed%20texture&width=400&height=300&seq=gallery003&orientation=landscape" 
-                                 alt="ステアリング施工前" class="before-image">
-                            <img src="https://readdy.ai/api/search-image?query=Luxury%20car%20steering%20wheel%20after%20water%20transfer%20printing%20with%20elegant%20wood%20grain%20pattern%2C%20high-end%20automotive%20interior%2C%20professional%20photography%2C%20rich%20texture%20detail&width=400&height=300&seq=gallery004&orientation=landscape" 
-                                 alt="ステアリング施工後" class="after-image">
+                            <img src="https://readdy.ai/api/search-image?query=Car%20steering%20wheel%20before%20water%20transfer%20printing%20plain%20black%20leather%20surface%2C%20automotive%20interior%20photography%2C%20professional%20studio%20lighting%2C%20detailed%20texture&width=400&height=300&seq=gallery003&orientation=landscape"
+                                alt="ステアリング施工前" class="before-image">
+                            <img src="https://readdy.ai/api/search-image?query=Luxury%20car%20steering%20wheel%20after%20water%20transfer%20printing%20with%20elegant%20wood%20grain%20pattern%2C%20high-end%20automotive%20interior%2C%20professional%20photography%2C%20rich%20texture%20detail&width=400&height=300&seq=gallery004&orientation=landscape"
+                                alt="ステアリング施工後" class="after-image">
                             <div class="slider-handle"></div>
                         </div>
                         <div class="zoom-overlay">
@@ -284,7 +317,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <span class="inline-block bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-3">自動車部品</span>
+                        <span
+                            class="inline-block bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-3">自動車部品</span>
                         <h3 class="text-xl font-bold mb-2 text-gray-900">ステアリング</h3>
                         <p class="text-gray-600 mb-4">天然木目調パターンで上質な手触りを実現。エルゴノミクスを考慮した設計。</p>
                         <div class="text-sm text-gray-500 text-right">
@@ -293,13 +327,14 @@
                     </div>
                 </div>
 
-                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer" data-category="automotive">
+                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
+                    data-category="automotive">
                     <div class="before-after-container">
                         <div class="before-after-slider">
-                            <img src="https://readdy.ai/api/search-image?query=Car%20wheel%20rim%20before%20water%20transfer%20printing%20plain%20aluminum%20surface%2C%20automotive%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20metal%20texture&width=400&height=300&seq=gallery005&orientation=landscape" 
-                                 alt="ホイール施工前" class="before-image">
-                            <img src="https://readdy.ai/api/search-image?query=Custom%20car%20wheel%20rim%20after%20water%20transfer%20printing%20with%20camouflage%20pattern%2C%20automotive%20customization%2C%20professional%20photography%2C%20detailed%20surface%20pattern&width=400&height=300&seq=gallery006&orientation=landscape" 
-                                 alt="ホイール施工後" class="after-image">
+                            <img src="https://readdy.ai/api/search-image?query=Car%20wheel%20rim%20before%20water%20transfer%20printing%20plain%20aluminum%20surface%2C%20automotive%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20metal%20texture&width=400&height=300&seq=gallery005&orientation=landscape"
+                                alt="ホイール施工前" class="before-image">
+                            <img src="https://readdy.ai/api/search-image?query=Custom%20car%20wheel%20rim%20after%20water%20transfer%20printing%20with%20camouflage%20pattern%2C%20automotive%20customization%2C%20professional%20photography%2C%20detailed%20surface%20pattern&width=400&height=300&seq=gallery006&orientation=landscape"
+                                alt="ホイール施工後" class="after-image">
                             <div class="slider-handle"></div>
                         </div>
                         <div class="zoom-overlay">
@@ -307,7 +342,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <span class="inline-block bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-3">自動車部品</span>
+                        <span
+                            class="inline-block bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-3">自動車部品</span>
                         <h3 class="text-xl font-bold mb-2 text-gray-900">ホイール</h3>
                         <p class="text-gray-600 mb-4">デジタルカモフラージュパターンで個性的な仕上がり。耐候性にも配慮した施工。</p>
                         <div class="text-sm text-gray-500 text-right">
@@ -317,13 +353,14 @@
                 </div>
 
                 <!-- Lure Cases -->
-                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer" data-category="lure">
+                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
+                    data-category="lure">
                     <div class="before-after-container">
                         <div class="before-after-slider">
-                            <img src="https://readdy.ai/api/search-image?query=Fishing%20lure%20before%20water%20transfer%20printing%20plain%20white%20surface%2C%20fishing%20equipment%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20product%20shot&width=400&height=300&seq=gallery007&orientation=landscape" 
-                                 alt="ルアー施工前" class="before-image">
-                            <img src="https://readdy.ai/api/search-image?query=Fishing%20lure%20after%20water%20transfer%20printing%20with%20realistic%20fish%20scale%20pattern%2C%20professional%20product%20photography%2C%20detailed%20texture%2C%20lifelike%20appearance&width=400&height=300&seq=gallery008&orientation=landscape" 
-                                 alt="ルアー施工後" class="after-image">
+                            <img src="https://readdy.ai/api/search-image?query=Fishing%20lure%20before%20water%20transfer%20printing%20plain%20white%20surface%2C%20fishing%20equipment%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20product%20shot&width=400&height=300&seq=gallery007&orientation=landscape"
+                                alt="ルアー施工前" class="before-image">
+                            <img src="https://readdy.ai/api/search-image?query=Fishing%20lure%20after%20water%20transfer%20printing%20with%20realistic%20fish%20scale%20pattern%2C%20professional%20product%20photography%2C%20detailed%20texture%2C%20lifelike%20appearance&width=400&height=300&seq=gallery008&orientation=landscape"
+                                alt="ルアー施工後" class="after-image">
                             <div class="slider-handle"></div>
                         </div>
                         <div class="zoom-overlay">
@@ -331,7 +368,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <span class="inline-block bg-green-500 bg-opacity-10 text-green-600 px-3 py-1 rounded-full text-sm font-medium mb-3">ルアー・釣具</span>
+                        <span
+                            class="inline-block bg-green-500 bg-opacity-10 text-green-600 px-3 py-1 rounded-full text-sm font-medium mb-3">ルアー・釣具</span>
                         <h3 class="text-xl font-bold mb-2 text-gray-900">ルアー</h3>
                         <p class="text-gray-600 mb-4">リアルな鯉のウロコパターン。水中での視覚効果を最大化した設計。</p>
                         <div class="text-sm text-gray-500 text-right">
@@ -340,13 +378,14 @@
                     </div>
                 </div>
 
-                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer" data-category="lure">
+                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
+                    data-category="lure">
                     <div class="before-after-container">
                         <div class="before-after-slider">
-                            <img src="https://readdy.ai/api/search-image?query=Fishing%20reel%20before%20water%20transfer%20printing%20plain%20black%20surface%2C%20fishing%20equipment%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20product%20shot&width=400&height=300&seq=gallery009&orientation=landscape" 
-                                 alt="リール施工前" class="before-image">
-                            <img src="https://readdy.ai/api/search-image?query=High-end%20fishing%20reel%20after%20water%20transfer%20printing%20with%20carbon%20fiber%20pattern%2C%20professional%20fishing%20equipment%2C%20detailed%20surface%20texture%2C%20premium%20finish&width=400&height=300&seq=gallery010&orientation=landscape" 
-                                 alt="リール施工後" class="after-image">
+                            <img src="https://readdy.ai/api/search-image?query=Fishing%20reel%20before%20water%20transfer%20printing%20plain%20black%20surface%2C%20fishing%20equipment%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20product%20shot&width=400&height=300&seq=gallery009&orientation=landscape"
+                                alt="リール施工前" class="before-image">
+                            <img src="https://readdy.ai/api/search-image?query=High-end%20fishing%20reel%20after%20water%20transfer%20printing%20with%20carbon%20fiber%20pattern%2C%20professional%20fishing%20equipment%2C%20detailed%20surface%20texture%2C%20premium%20finish&width=400&height=300&seq=gallery010&orientation=landscape"
+                                alt="リール施工後" class="after-image">
                             <div class="slider-handle"></div>
                         </div>
                         <div class="zoom-overlay">
@@ -354,7 +393,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <span class="inline-block bg-green-500 bg-opacity-10 text-green-600 px-3 py-1 rounded-full text-sm font-medium mb-3">ルアー・釣具</span>
+                        <span
+                            class="inline-block bg-green-500 bg-opacity-10 text-green-600 px-3 py-1 rounded-full text-sm font-medium mb-3">ルアー・釣具</span>
                         <h3 class="text-xl font-bold mb-2 text-gray-900">リール</h3>
                         <p class="text-gray-600 mb-4">カーボンファイバー調で軽量感を演出。機能性を損なわない精密施工。</p>
                         <div class="text-sm text-gray-500 text-right">
@@ -364,13 +404,14 @@
                 </div>
 
                 <!-- Helmet Cases -->
-                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer" data-category="helmet">
+                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
+                    data-category="helmet">
                     <div class="before-after-container">
                         <div class="before-after-slider">
-                            <img src="https://readdy.ai/api/search-image?query=Motorcycle%20helmet%20before%20water%20transfer%20printing%20plain%20black%20surface%2C%20safety%20equipment%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20product%20shot&width=400&height=300&seq=gallery011&orientation=landscape" 
-                                 alt="ヘルメット施工前" class="before-image">
-                            <img src="https://readdy.ai/api/search-image?query=Motorcycle%20helmet%20after%20water%20transfer%20printing%20with%20dynamic%20flame%20pattern%2C%20custom%20safety%20equipment%2C%20professional%20photography%2C%20detailed%20surface%20design&width=400&height=300&seq=gallery012&orientation=landscape" 
-                                 alt="ヘルメット施工後" class="after-image">
+                            <img src="https://readdy.ai/api/search-image?query=Motorcycle%20helmet%20before%20water%20transfer%20printing%20plain%20black%20surface%2C%20safety%20equipment%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20product%20shot&width=400&height=300&seq=gallery011&orientation=landscape"
+                                alt="ヘルメット施工前" class="before-image">
+                            <img src="https://readdy.ai/api/search-image?query=Motorcycle%20helmet%20after%20water%20transfer%20printing%20with%20dynamic%20flame%20pattern%2C%20custom%20safety%20equipment%2C%20professional%20photography%2C%20detailed%20surface%20design&width=400&height=300&seq=gallery012&orientation=landscape"
+                                alt="ヘルメット施工後" class="after-image">
                             <div class="slider-handle"></div>
                         </div>
                         <div class="zoom-overlay">
@@ -378,7 +419,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <span class="inline-block bg-red-500 bg-opacity-10 text-red-600 px-3 py-1 rounded-full text-sm font-medium mb-3">ヘルメット</span>
+                        <span
+                            class="inline-block bg-red-500 bg-opacity-10 text-red-600 px-3 py-1 rounded-full text-sm font-medium mb-3">ヘルメット</span>
                         <h3 class="text-xl font-bold mb-2 text-gray-900">ヘルメット転写</h3>
                         <p class="text-gray-600 mb-4">ダイナミックなフレームパターン。安全基準を満たしながら個性的なデザインを実現。</p>
                         <div class="text-sm text-gray-500 text-right">
@@ -388,13 +430,14 @@
                 </div>
 
                 <!-- Stationery Cases -->
-                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer" data-category="stationery">
+                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
+                    data-category="stationery">
                     <div class="before-after-container">
                         <div class="before-after-slider">
-                            <img src="https://readdy.ai/api/search-image?query=Luxury%20pen%20before%20water%20transfer%20printing%20plain%20black%20surface%2C%20stationery%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20product%20shot&width=400&height=300&seq=gallery013&orientation=landscape" 
-                                 alt="ペン施工前" class="before-image">
-                            <img src="https://readdy.ai/api/search-image?query=Luxury%20fountain%20pen%20after%20water%20transfer%20printing%20with%20elegant%20marble%20pattern%2C%20high-end%20stationery%2C%20professional%20photography%2C%20detailed%20surface%20texture&width=400&height=300&seq=gallery014&orientation=landscape" 
-                                 alt="ペン施工後" class="after-image">
+                            <img src="https://readdy.ai/api/search-image?query=Luxury%20pen%20before%20water%20transfer%20printing%20plain%20black%20surface%2C%20stationery%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20product%20shot&width=400&height=300&seq=gallery013&orientation=landscape"
+                                alt="ペン施工前" class="before-image">
+                            <img src="https://readdy.ai/api/search-image?query=Luxury%20fountain%20pen%20after%20water%20transfer%20printing%20with%20elegant%20marble%20pattern%2C%20high-end%20stationery%2C%20professional%20photography%2C%20detailed%20surface%20texture&width=400&height=300&seq=gallery014&orientation=landscape"
+                                alt="ペン施工後" class="after-image">
                             <div class="slider-handle"></div>
                         </div>
                         <div class="zoom-overlay">
@@ -402,7 +445,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <span class="inline-block bg-purple-500 bg-opacity-10 text-purple-600 px-3 py-1 rounded-full text-sm font-medium mb-3">筆記具・雑貨</span>
+                        <span
+                            class="inline-block bg-purple-500 bg-opacity-10 text-purple-600 px-3 py-1 rounded-full text-sm font-medium mb-3">筆記具・雑貨</span>
                         <h3 class="text-xl font-bold mb-2 text-gray-900">万年筆</h3>
                         <p class="text-gray-600 mb-4">上品なマーブル調パターン。書き心地を損なわない繊細な施工技術。</p>
                         <div class="text-sm text-gray-500 text-right">
@@ -412,13 +456,14 @@
                 </div>
 
                 <!-- Sports Cases -->
-                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer" data-category="sports">
+                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
+                    data-category="sports">
                     <div class="before-after-container">
                         <div class="before-after-slider">
-                            <img src="https://readdy.ai/api/search-image?query=Baseball%20bat%20before%20water%20transfer%20printing%20plain%20wood%20surface%2C%20sports%20equipment%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20product%20shot&width=400&height=300&seq=gallery015&orientation=landscape" 
-                                 alt="バット施工前" class="before-image">
-                            <img src="https://readdy.ai/api/search-image?query=Custom%20baseball%20bat%20after%20water%20transfer%20printing%20with%20carbon%20fiber%20pattern%2C%20professional%20sports%20equipment%2C%20detailed%20surface%20texture%2C%20high-performance%20finish&width=400&height=300&seq=gallery016&orientation=landscape" 
-                                 alt="バット施工後" class="after-image">
+                            <img src="https://readdy.ai/api/search-image?query=Baseball%20bat%20before%20water%20transfer%20printing%20plain%20wood%20surface%2C%20sports%20equipment%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20product%20shot&width=400&height=300&seq=gallery015&orientation=landscape"
+                                alt="バット施工前" class="before-image">
+                            <img src="https://readdy.ai/api/search-image?query=Custom%20baseball%20bat%20after%20water%20transfer%20printing%20with%20carbon%20fiber%20pattern%2C%20professional%20sports%20equipment%2C%20detailed%20surface%20texture%2C%20high-performance%20finish&width=400&height=300&seq=gallery016&orientation=landscape"
+                                alt="バット施工後" class="after-image">
                             <div class="slider-handle"></div>
                         </div>
                         <div class="zoom-overlay">
@@ -426,7 +471,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <span class="inline-block bg-orange-500 bg-opacity-10 text-orange-600 px-3 py-1 rounded-full text-sm font-medium mb-3">スポーツ用品</span>
+                        <span
+                            class="inline-block bg-orange-500 bg-opacity-10 text-orange-600 px-3 py-1 rounded-full text-sm font-medium mb-3">スポーツ用品</span>
                         <h3 class="text-xl font-bold mb-2 text-gray-900">野球バット</h3>
                         <p class="text-gray-600 mb-4">カーボンファイバー調で軽量感を演出。グリップ力を向上させる表面処理。</p>
                         <div class="text-sm text-gray-500 text-right">
@@ -436,13 +482,14 @@
                 </div>
 
                 <!-- Industrial Cases -->
-                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer" data-category="industrial">
+                <div class="gallery-card bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
+                    data-category="industrial">
                     <div class="before-after-container">
                         <div class="before-after-slider">
-                            <img src="https://readdy.ai/api/search-image?query=Industrial%20equipment%20housing%20before%20water%20transfer%20printing%20plain%20metal%20surface%2C%20industrial%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20product%20shot&width=400&height=300&seq=gallery017&orientation=landscape" 
-                                 alt="産業機器施工前" class="before-image">
-                            <img src="https://readdy.ai/api/search-image?query=Industrial%20equipment%20housing%20after%20water%20transfer%20printing%20with%20professional%20metallic%20pattern%2C%20high-tech%20industrial%20design%2C%20detailed%20surface%20texture&width=400&height=300&seq=gallery018&orientation=landscape" 
-                                 alt="産業機器施工後" class="after-image">
+                            <img src="https://readdy.ai/api/search-image?query=Industrial%20equipment%20housing%20before%20water%20transfer%20printing%20plain%20metal%20surface%2C%20industrial%20photography%2C%20clean%20studio%20lighting%2C%20detailed%20product%20shot&width=400&height=300&seq=gallery017&orientation=landscape"
+                                alt="産業機器施工前" class="before-image">
+                            <img src="https://readdy.ai/api/search-image?query=Industrial%20equipment%20housing%20after%20water%20transfer%20printing%20with%20professional%20metallic%20pattern%2C%20high-tech%20industrial%20design%2C%20detailed%20surface%20texture&width=400&height=300&seq=gallery018&orientation=landscape"
+                                alt="産業機器施工後" class="after-image">
                             <div class="slider-handle"></div>
                         </div>
                         <div class="zoom-overlay">
@@ -450,7 +497,8 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <span class="inline-block bg-gray-500 bg-opacity-10 text-gray-600 px-3 py-1 rounded-full text-sm font-medium mb-3">産業用品</span>
+                        <span
+                            class="inline-block bg-gray-500 bg-opacity-10 text-gray-600 px-3 py-1 rounded-full text-sm font-medium mb-3">産業用品</span>
                         <h3 class="text-xl font-bold mb-2 text-gray-900">精密機器 カバー</h3>
                         <p class="text-gray-600 mb-4">耐久性と美観を両立したメタリック調仕上げ。工業環境での使用に最適化。</p>
                         <div class="text-sm text-gray-500 text-right">
@@ -472,7 +520,7 @@
                     各工程での細かな技術と品質管理をご紹介します
                 </p>
             </div>
-            
+
             <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
                 <div>
                     <h3 class="text-2xl font-bold mb-6 text-gray-900">水面展開技術</h3>
@@ -495,15 +543,15 @@
                     </ul>
                 </div>
                 <div>
-                    <img src="https://readdy.ai/api/search-image?query=Water%20transfer%20printing%20film%20floating%20on%20water%20surface%20with%20activator%20being%20applied%2C%20professional%20industrial%20process%20photography%2C%20detailed%20technical%20documentation%2C%20blue%20accent%20lighting%2C%20precision%20equipment&width=600&height=400&seq=process001&orientation=landscape" 
-                         alt="水面展開プロセス" class="w-full h-auto object-cover rounded-2xl shadow-lg">
+                    <img src="https://readdy.ai/api/search-image?query=Water%20transfer%20printing%20film%20floating%20on%20water%20surface%20with%20activator%20being%20applied%2C%20professional%20industrial%20process%20photography%2C%20detailed%20technical%20documentation%2C%20blue%20accent%20lighting%2C%20precision%20equipment&width=600&height=400&seq=process001&orientation=landscape"
+                        alt="水面展開プロセス" class="w-full h-auto object-cover rounded-2xl shadow-lg">
                 </div>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
                 <div class="order-2 lg:order-1">
-                    <img src="https://readdy.ai/api/search-image?query=Product%20being%20dipped%20into%20water%20transfer%20printing%20tank%20with%20film%20wrapping%20around%20complex%203D%20surface%2C%20dramatic%20industrial%20photography%2C%20precise%20moment%20capture%2C%20professional%20lighting&width=600&height=400&seq=process002&orientation=landscape" 
-                         alt="浸漬プロセス" class="w-full h-auto object-cover rounded-2xl shadow-lg">
+                    <img src="https://readdy.ai/api/search-image?query=Product%20being%20dipped%20into%20water%20transfer%20printing%20tank%20with%20film%20wrapping%20around%20complex%203D%20surface%2C%20dramatic%20industrial%20photography%2C%20precise%20moment%20capture%2C%20professional%20lighting&width=600&height=400&seq=process002&orientation=landscape"
+                        alt="浸漬プロセス" class="w-full h-auto object-cover rounded-2xl shadow-lg">
                 </div>
                 <div class="order-1 lg:order-2">
                     <h3 class="text-2xl font-bold mb-6 text-gray-900">精密浸漬技術</h3>
@@ -549,15 +597,15 @@
                     </ul>
                 </div>
                 <div>
-                    <img src="https://placehold.co/600x400" 
-                         alt="自動化ライン" class="w-full h-auto object-cover rounded-2xl shadow-lg">
+                    <img src="https://placehold.co/600x400" alt="自動化ライン"
+                        class="w-full h-auto object-cover rounded-2xl shadow-lg">
                 </div>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="order-2 lg:order-1">
-                    <img src="https://placehold.co/600x400" 
-                         alt="熟練職人の技" class="w-full h-auto object-cover rounded-2xl shadow-lg">
+                    <img src="https://placehold.co/600x400" alt="熟練職人の技"
+                        class="w-full h-auto object-cover rounded-2xl shadow-lg">
                 </div>
                 <div class="order-1 lg:order-2">
                     <h3 class="text-2xl font-bold mb-6 text-gray-900">熟練職人による匠の技</h3>
@@ -592,11 +640,12 @@
                     実際にご利用いただいたお客様からの評価をご紹介します
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-gray-50 p-8 rounded-2xl">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
+                        <div
+                            class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
                             T
                         </div>
                         <div>
@@ -615,10 +664,11 @@
                         <i class="ri-star-fill"></i>
                     </div>
                 </div>
-                
+
                 <div class="bg-gray-50 p-8 rounded-2xl">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
+                        <div
+                            class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
                             M
                         </div>
                         <div>
@@ -637,10 +687,11 @@
                         <i class="ri-star-fill"></i>
                     </div>
                 </div>
-                
+
                 <div class="bg-gray-50 p-8 rounded-2xl">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
+                        <div
+                            class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
                             Y
                         </div>
                         <div>
@@ -662,7 +713,8 @@
 
                 <div class="bg-gray-50 p-8 rounded-2xl">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
+                        <div
+                            class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
                             H
                         </div>
                         <div>
@@ -684,7 +736,8 @@
 
                 <div class="bg-gray-50 p-8 rounded-2xl">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
+                        <div
+                            class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
                             K
                         </div>
                         <div>
@@ -706,7 +759,8 @@
 
                 <div class="bg-gray-50 p-8 rounded-2xl">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
+                        <div
+                            class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
                             A
                         </div>
                         <div>
@@ -736,9 +790,10 @@
             <p class="text-xl mb-8 opacity-90">
                 無料見積もり・技術相談で、最適な加飾方法をご提案いたします
             </p>
-            
+
             <div class="flex justify-center">
-                <a href="contact.html" class="bg-white text-primary hover:bg-gray-100 px-8 py-4 !rounded-button text-lg font-bold whitespace-nowrap transition-colors shadow-lg cursor-pointer">
+                <a href="contact.html"
+                    class="bg-white text-primary hover:bg-gray-100 px-8 py-4 !rounded-button text-lg font-bold whitespace-nowrap transition-colors shadow-lg cursor-pointer">
                     無料見積もりを依頼
                 </a>
             </div>
@@ -752,7 +807,7 @@
                 <a href="index.html" class="flex items-center w-max">
                     <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto">
                 </a>
-                
+
                 <div>
                     <h3 class="text-lg font-semibold mb-4 text-center">お問い合わせ</h3>
                     <div class="space-y-2 text-gray-400 text-center">
@@ -767,7 +822,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
                 <p>&copy; 2024 水圧転写技術. All rights reserved.</p>
             </div>
@@ -778,10 +833,12 @@
     <div id="lightbox" class="lightbox">
         <div class="lightbox-content">
             <img id="lightbox-image" src="" alt="">
-            <button id="close-lightbox" class="absolute top-4 right-4 w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition-colors cursor-pointer">
+            <button id="close-lightbox"
+                class="absolute top-4 right-4 w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition-colors cursor-pointer">
                 <i class="ri-close-line text-xl"></i>
             </button>
-            <div id="lightbox-info" class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white p-6 rounded-b-2xl">
+            <div id="lightbox-info"
+                class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white p-6 rounded-b-2xl">
                 <h3 id="lightbox-title" class="text-xl font-bold mb-2"></h3>
                 <p id="lightbox-description" class="text-gray-300"></p>
             </div>
@@ -789,38 +846,38 @@
     </div>
 
     <script id="before-after-slider">
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const sliders = document.querySelectorAll('.before-after-slider');
-            
+
             sliders.forEach(slider => {
                 const handle = slider.querySelector('.slider-handle');
                 const afterImage = slider.querySelector('.after-image');
                 let isDragging = false;
-                
+
                 function updateSlider(x) {
                     const rect = slider.getBoundingClientRect();
                     const percentage = Math.max(0, Math.min(100, (x - rect.left) / rect.width * 100));
-                    
+
                     handle.style.left = percentage + '%';
                     afterImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
                 }
-                
-                handle.addEventListener('mousedown', function(e) {
+
+                handle.addEventListener('mousedown', function (e) {
                     isDragging = true;
                     e.preventDefault();
                 });
-                
-                document.addEventListener('mousemove', function(e) {
+
+                document.addEventListener('mousemove', function (e) {
                     if (isDragging) {
                         updateSlider(e.clientX);
                     }
                 });
-                
-                document.addEventListener('mouseup', function() {
+
+                document.addEventListener('mouseup', function () {
                     isDragging = false;
                 });
-                
-                slider.addEventListener('click', function(e) {
+
+                slider.addEventListener('click', function (e) {
                     if (!isDragging) {
                         updateSlider(e.clientX);
                     }
@@ -830,38 +887,38 @@
     </script>
 
     <script id="lightbox-functionality">
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const galleryCards = document.querySelectorAll('.gallery-card');
             const lightbox = document.getElementById('lightbox');
             const lightboxImage = document.getElementById('lightbox-image');
             const lightboxTitle = document.getElementById('lightbox-title');
             const lightboxDescription = document.getElementById('lightbox-description');
             const closeLightbox = document.getElementById('close-lightbox');
-            
+
             galleryCards.forEach(card => {
-                card.addEventListener('click', function() {
+                card.addEventListener('click', function () {
                     const afterImage = card.querySelector('.after-image');
                     const title = card.querySelector('h3').textContent;
                     const description = card.querySelector('p').textContent;
-                    
+
                     lightboxImage.src = afterImage.src;
                     lightboxTitle.textContent = title;
                     lightboxDescription.textContent = description;
                     lightbox.classList.add('active');
                 });
             });
-            
-            closeLightbox.addEventListener('click', function() {
+
+            closeLightbox.addEventListener('click', function () {
                 lightbox.classList.remove('active');
             });
-            
-            lightbox.addEventListener('click', function(e) {
+
+            lightbox.addEventListener('click', function (e) {
                 if (e.target === lightbox) {
                     lightbox.classList.remove('active');
                 }
             });
-            
-            document.addEventListener('keydown', function(e) {
+
+            document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape' && lightbox.classList.contains('active')) {
                     lightbox.classList.remove('active');
                 }
@@ -870,10 +927,10 @@
     </script>
 
     <script id="header-scroll">
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const header = document.querySelector('header');
-            
-            window.addEventListener('scroll', function() {
+
+            window.addEventListener('scroll', function () {
                 if (window.scrollY > 100) {
                     header.classList.add('bg-opacity-95', 'backdrop-blur-sm');
                 } else {
@@ -883,4 +940,5 @@
         });
     </script>
 </body>
+
 </html>
