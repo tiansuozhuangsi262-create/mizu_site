@@ -53,6 +53,7 @@
             }
         }
     </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Noto Sans JP', sans-serif;
@@ -160,6 +161,17 @@
                     icon.classList.remove('fa-bars');
                     icon.classList.add('fa-times');
                 }
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
             });
         });
     </script>
@@ -1076,7 +1088,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black py-12 border-t border-gray-800">
+    <footer class="bg-black text-white py-16">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center justify-center gap-8">
                 <a href="index.html" class="flex items-center w-max">
@@ -1084,20 +1096,22 @@
                 </a>
 
                 <div>
-                    <h3 class="font-semibold mb-4 text-center">お問い合わせ</h3>
-                    <div class="space-y-2 text-sm text-gray-400 text-center">
-                        <p>TEL: ddh.hydra@gmail.com</p>
-                        <p>所在地: ベトナムホーチミン</p>
-                        <p>定休日: 土日祝</p>
+                    <h3 class="text-lg font-semibold mb-4 text-center">お問い合わせ</h3>
+                    <div class="space-y-2 text-gray-400 text-center">
+                        <p class="flex items-center space-x-2 justify-center">
+                            <i class="ri-mail-line"></i>
+                            <span>ddh.hydra@gmail.com</span>
+                        </p>
+                        <p class="flex items-center space-x-2 justify-center">
+                            <i class="ri-map-pin-line"></i>
+                            <span>ベトナムホーチミン</span>
+                        </p>
                     </div>
-                    <a href="contact.html"
-                        class="mt-4 inline-block bg-primary hover:bg-blue-700 px-6 py-2 !rounded-button whitespace-nowrap transition-colors text-white font-bold">
-                        お問い合わせフォームへ
-                    </a>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-                <p>&copy; 2024 高級水圧転写サービス. All rights reserved.</p>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 水圧転写技術. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1125,6 +1139,40 @@
                         icon.className = 'ri-subtract-line accordion-icon';
                     }
                 });
+            });
+        });
+    </script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Process steps
+            const processSteps = document.querySelectorAll('.flex.flex-col.items-center.text-center.relative.group');
+            processSteps.forEach((el, index) => {
+                el.setAttribute('data-aos', 'fade-up');
+                el.setAttribute('data-aos-delay', index * 100);
+            });
+
+            // Price cards (targeting the specific grid structure)
+            const priceSection = document.querySelector('section.bg-\\[\\#121212\\] .grid.grid-cols-1.md\\:grid-cols-3');
+            if (priceSection) {
+                Array.from(priceSection.children).forEach((el, index) => {
+                    el.setAttribute('data-aos', 'zoom-in');
+                    el.setAttribute('data-aos-delay', index * 100);
+                });
+            }
+
+            // FAQ items
+            const faqItems = document.querySelectorAll('#faq .group');
+            faqItems.forEach((el, index) => {
+                el.setAttribute('data-aos', 'fade-up');
+            });
+
+            AOS.init({
+                once: true,
+                offset: 100,
+                duration: 800,
+                easing: 'ease-out-cubic',
             });
         });
     </script>

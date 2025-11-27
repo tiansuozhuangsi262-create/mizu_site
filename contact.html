@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Pacifico&display=swap');
 
@@ -117,6 +118,17 @@
                     icon.classList.remove('fa-bars');
                     icon.classList.add('fa-times');
                 }
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
             });
         });
     </script>
@@ -639,6 +651,24 @@
         </div>
     </footer>
 
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Contact form animation
+            const formContainer = document.querySelector('.bg-\\[\\#1a1a1a\\].rounded-2xl');
+            if (formContainer) {
+                formContainer.setAttribute('data-aos', 'zoom-in');
+            }
+
+            AOS.init({
+                once: true,
+                offset: 100,
+                duration: 800,
+                easing: 'ease-out-cubic',
+            });
+        });
+    </script>
 </body>
 
 </html>

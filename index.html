@@ -177,6 +177,17 @@
                     icon.classList.add('fa-times');
                 }
             });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
         });
     </script>
 
@@ -223,43 +234,46 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="ri-3d-view-line text-2xl text-white"></i>
+                <!-- Advantage 1: Capacity -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-lg text-center group hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                        <i class="ri-plant-line text-3xl text-primary group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">3D 曲面対応</h3>
-                    <p class="text-gray-600 mb-6">
-                        どんなに複雑な曲面でも、継ぎ目なく美しいパターンを転写。従来技術では困難だった立体物への加飾を実現します。
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">圧倒的な生産能力</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        ベトナム工場に20mの自動生産ラインを3本保有。月産10万個以上の大量生産にも迅速に対応します。
                     </p>
-                    <img src="https://readdy.ai/api/search-image?query=Technical%20diagram%20showing%203D%20curved%20surface%20water%20transfer%20printing%20process%2C%20cross-section%20view%20of%20complex%20automotive%20part%20with%20seamless%20pattern%20application%2C%20professional%20technical%20illustration%2C%20blue%20and%20gray%20color%20scheme%2C%20precision%20engineering%20visualization&width=400&height=300&seq=tech001&orientation=landscape"
-                        alt="3D曲面対応" class="w-full h-48 object-cover rounded-lg">
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="ri-palette-line text-2xl text-white"></i>
+                <!-- Advantage 2: Quality -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-lg text-center group hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                        <i class="ri-medal-line text-3xl text-primary group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">多素材対応</h3>
-                    <p class="text-gray-600 mb-6">
-                        金属、プラスチック、木材、セラミックなど、あらゆる素材に対応。材質を選ばず高品質な仕上がりを提供します。
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">日本品質の管理体制</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        日本人技術者が常駐し、徹底した品質管理を実施。日本の厳しい品質基準をクリアした製品のみをお届けします。
                     </p>
-                    <img src="https://readdy.ai/api/search-image?query=Various%20materials%20showcase%20for%20water%20transfer%20printing%20including%20metal%20automotive%20parts%2C%20plastic%20components%2C%20wooden%20items%2C%20ceramic%20pieces%2C%20all%20with%20different%20decorative%20patterns%2C%20professional%20product%20photography%2C%20clean%20white%20background%2C%20high%20detail&width=400&height=300&seq=tech002&orientation=landscape"
-                        alt="多素材対応" class="w-full h-48 object-cover rounded-lg">
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="ri-focus-3-line text-2xl text-white"></i>
+                <!-- Advantage 3: Cost -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-lg text-center group hover:-translate-y-2 transition-transform duration-300">
+                    <div
+                        class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+                        <i
+                            class="ri-money-dollar-circle-line text-3xl text-primary group-hover:text-white transition-colors"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">高精度転写</h3>
-                    <p class="text-gray-600 mb-6">
-                        ミクロン単位の精密な転写技術により、細かなディテールまで完璧に再現。プロフェッショナル品質をお約束します。
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">圧倒的なコストパフォーマンス</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        ベトナム生産ならではの低コストを実現。高品質な水圧転写を、他社よりもリーズナブルな価格で提供します。
                     </p>
-                    <img src="https://readdy.ai/api/search-image?query=Extreme%20close-up%20macro%20photography%20of%20water%20transfer%20printing%20showing%20incredible%20detail%20and%20precision%2C%20carbon%20fiber%20texture%20with%20perfect%20pattern%20alignment%2C%20professional%20studio%20lighting%2C%20high%20magnification%20view%2C%20technical%20precision&width=400&height=300&seq=tech003&orientation=landscape"
-                        alt="高精度転写" class="w-full h-48 object-cover rounded-lg">
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Process Section -->
@@ -274,7 +288,7 @@
             </div>
 
             <div class="flex flex-col lg:flex-row justify-between items-center space-y-8 lg:space-y-0 lg:space-x-8">
-                <div class="process-step text-center flex-1">
+                <div class="process-step text-center flex-1" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-2xl font-bold">01</span>
                     </div>
@@ -282,7 +296,7 @@
                     <p class="text-gray-300">素材表面の清浄化と密着性向上のための前処理を実施</p>
                 </div>
 
-                <div class="process-step text-center flex-1">
+                <div class="process-step text-center flex-1" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-2xl font-bold">02</span>
                     </div>
@@ -290,7 +304,7 @@
                     <p class="text-gray-300">専用フィルムの水面展開と活性化処理</p>
                 </div>
 
-                <div class="process-step text-center flex-1">
+                <div class="process-step text-center flex-1" data-aos="fade-up" data-aos-delay="300">
                     <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-2xl font-bold">03</span>
                     </div>
@@ -298,7 +312,7 @@
                     <p class="text-gray-300">最適な角度と速度での製品浸漬による転写実行</p>
                 </div>
 
-                <div class="process-step text-center flex-1">
+                <div class="process-step text-center flex-1" data-aos="fade-up" data-aos-delay="400">
                     <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-2xl font-bold">04</span>
                     </div>
@@ -306,7 +320,7 @@
                     <p class="text-gray-300">耐久性向上のための保護コーティング施工</p>
                 </div>
 
-                <div class="process-step text-center flex-1">
+                <div class="process-step text-center flex-1" data-aos="fade-up" data-aos-delay="500">
                     <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-2xl font-bold">05</span>
                     </div>
@@ -317,150 +331,159 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-white text-gray-900">
+    <!-- Gallery Preview Section -->
+    <section class="py-20 bg-[#121212] text-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6 text-gray-900">施工事例ギャラリー</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    多様な製品カテゴリーでの施工実績。ビフォー・アフターで見る劇的な変化
-                </p>
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">施工事例</h2>
+                <p class="text-gray-400">様々な素材・形状への加工実績があります</p>
             </div>
 
-            <div class="flex justify-center mb-12">
-                <div class="flex bg-gray-100 rounded-full p-2">
-                    <button class="gallery-tab active px-6 py-3 !rounded-button whitespace-nowrap transition-all"
-                        data-category="automotive">
-                        自動車部品
-                    </button>
-                    <button class="gallery-tab px-6 py-3 !rounded-button whitespace-nowrap transition-all"
-                        data-category="lure">
-                        ルアー・釣具
-                    </button>
-                    <button class="gallery-tab px-6 py-3 !rounded-button whitespace-nowrap transition-all"
-                        data-category="helmet">
-                        ヘルメット
-                    </button>
-                    <button class="gallery-tab px-6 py-3 !rounded-button whitespace-nowrap transition-all"
-                        data-category="stationery">
-                        筆記具・雑貨
-                    </button>
+            <!-- Category Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="100">
+                <button
+                    class="gallery-tab active px-6 py-2 rounded-full border border-gray-700 hover:border-primary transition-all"
+                    data-category="automotive">自動車部品</button>
+                <button
+                    class="gallery-tab px-6 py-2 rounded-full border border-gray-700 hover:border-primary transition-all"
+                    data-category="lure">釣具・ルアー</button>
+                <button
+                    class="gallery-tab px-6 py-2 rounded-full border border-gray-700 hover:border-primary transition-all"
+                    data-category="helmet">ヘルメット</button>
+                <button
+                    class="gallery-tab px-6 py-2 rounded-full border border-gray-700 hover:border-primary transition-all"
+                    data-category="stationery">小物・その他</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div id="gallery-content" class="grid md:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200">
+                <!-- Initial Content (Automotive) -->
+                <div class="gallery-item bg-gray-900 rounded-2xl overflow-hidden group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Automotive%20dashboard%20water%20transfer%20printing%20carbon%20fiber%20pattern%2C%20before%20after%20comparison%2C%20luxury%20car%20interior%2C%20professional%20photography%2C%20high%20contrast%20lighting%2C%20detailed%20texture&width=400&height=300&seq=auto001&orientation=landscape"
+                            alt="ダッシュボード"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">ダッシュボード カーボン調</h3>
+                        <p class="text-gray-400">高級感あふれるカーボンファイバー柄で内装をグレードアップ</p>
+                    </div>
+                </div>
+                <div class="gallery-item bg-gray-900 rounded-2xl overflow-hidden group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Car%20steering%20wheel%20wood%20grain%20water%20transfer%20printing%2C%20luxury%20automotive%20interior%20customization%2C%20before%20after%20transformation%2C%20professional%20product%20photography&width=400&height=300&seq=auto002&orientation=landscape"
+                            alt="ステアリング"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">ステアリング 木目調</h3>
+                        <p class="text-gray-400">天然木の質感を再現した高級仕上げ</p>
+                    </div>
+                </div>
+                <div class="gallery-item bg-gray-900 rounded-2xl overflow-hidden group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Automotive%20wheel%20rim%20camouflage%20pattern%20water%20transfer%20printing%2C%20custom%20car%20modification%2C%20before%20after%20comparison%2C%20detailed%20surface%20texture%20photography&width=400&height=300&seq=auto003&orientation=landscape"
+                            alt="ホイール"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">ホイール カモフラージュ</h3>
+                        <p class="text-gray-400">個性的なカモフラージュパターンでカスタマイズ</p>
+                    </div>
                 </div>
             </div>
 
-            <div id="gallery-content" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Automotive Category -->
-                <div class="gallery-item automotive bg-white rounded-2xl overflow-hidden shadow-lg">
-                    <div class="before-after-slider h-64 relative">
-                        <img src="https://readdy.ai/api/search-image?query=Before%20and%20after%20comparison%20of%20automotive%20dashboard%20water%20transfer%20printing%2C%20left%20side%20showing%20plain%20black%20plastic%20dashboard%2C%20right%20side%20showing%20beautiful%20carbon%20fiber%20pattern%2C%20split%20screen%20comparison%2C%20professional%20automotive%20photography%2C%20high%20contrast%20lighting&width=400&height=300&seq=auto001&orientation=landscape"
-                            alt="自動車ダッシュボード施工前後" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-900">ダッシュボード カーボン調</h3>
-                        <p class="text-gray-600">高級感あふれるカーボンファイバー柄で内装をグレードアップ</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item automotive bg-white rounded-2xl overflow-hidden shadow-lg">
-                    <div class="before-after-slider h-64 relative">
-                        <img src="https://readdy.ai/api/search-image?query=Automotive%20steering%20wheel%20water%20transfer%20printing%20before%20after%2C%20plain%20leather%20steering%20wheel%20transformed%20with%20wood%20grain%20pattern%2C%20luxury%20car%20interior%2C%20professional%20automotive%20photography%2C%20detailed%20texture%20comparison&width=400&height=300&seq=auto002&orientation=landscape"
-                            alt="ステアリング施工前後" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-900">ステアリング 木目調</h3>
-                        <p class="text-gray-600">天然木の質感を再現した高級仕上げ</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item automotive bg-white rounded-2xl overflow-hidden shadow-lg">
-                    <div class="before-after-slider h-64 relative">
-                        <img src="https://readdy.ai/api/search-image?query=Car%20wheel%20rim%20water%20transfer%20printing%20transformation%2C%20plain%20aluminum%20wheel%20to%20camouflage%20pattern%2C%20automotive%20customization%2C%20before%20after%20comparison%2C%20professional%20product%20photography%2C%20detailed%20surface%20texture&width=400&height=300&seq=auto003&orientation=landscape"
-                            alt="ホイール施工前後" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-gray-900">ホイール カモフラージュ</h3>
-                        <p class="text-gray-600">個性的なカモフラージュパターンでカスタマイズ</p>
-                    </div>
-                </div>
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="works.html"
+                    class="inline-flex items-center text-primary hover:text-white transition-colors font-bold text-lg group">
+                    もっと見る <i class="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Work Process Visualization -->
-    <section class="py-20 bg-gray-900 text-white">
+    <!-- Process Section -->
+    <section class="py-20 bg-white text-gray-900">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-4xl font-bold mb-6">匠の技術</h2>
-                    <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-                        水面に浮かぶフィルムと製品が一体となる瞬間。熟練の技術者による精密なコントロールが、不可能を可能にします。
-                    </p>
-                    <div class="space-y-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                        職人の技と<br>
+                        最新設備の融合
+                    </h2>
+                    <div class="space-y-6">
                         <div class="flex items-center space-x-4">
                             <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                                 <i class="ri-drop-line text-white"></i>
                             </div>
-                            <span>水温・水質の精密管理</span>
+                            <span class="font-bold text-lg">水温・水質の精密管理</span>
                         </div>
                         <div class="flex items-center space-x-4">
                             <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                                 <i class="ri-timer-line text-white"></i>
                             </div>
-                            <span>最適なタイミングでの浸漬</span>
+                            <span class="font-bold text-lg">最適なタイミングでの浸漬</span>
                         </div>
                         <div class="flex items-center space-x-4">
                             <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                                 <i class="ri-hand-heart-line text-white"></i>
                             </div>
-                            <span>職人による手作業での品質管理</span>
+                            <span class="font-bold text-lg">職人による手作業での品質管理</span>
                         </div>
                     </div>
+                    <div class="mt-8">
+                        <p class="text-gray-600 leading-relaxed">
+                            水圧転写は、温度、湿度、フィルムの状態など、様々な要因が仕上がりに影響します。私たちは長年の経験とデータに基づき、常に最適な条件で加工を行っています。
+                        </p>
+                    </div>
                 </div>
-                <div class="relative">
+                <div class="relative" data-aos="zoom-in">
                     <img src="https://readdy.ai/api/search-image?query=Dramatic%20water%20transfer%20printing%20process%20in%20action%2C%20product%20being%20submerged%20into%20water%20tank%20with%20floating%20decorative%20film%2C%20dynamic%20water%20splash%2C%20professional%20industrial%20photography%2C%20dramatic%20lighting%2C%20technical%20precision%2C%20blue%20accent%20lighting%2C%20mystical%20atmosphere&width=600&height=800&seq=process001&orientation=portrait"
-                        alt="水圧転写作業風景" class="w-full h-auto object-cover rounded-2xl shadow-2xl">
+                        alt="水圧転写作業風景"
+                        class="w-full h-auto object-cover rounded-2xl shadow-2xl hover:scale-[1.02] transition-transform duration-500">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section id="contact" class="py-20 bg-gradient-to-r from-primary to-blue-600 text-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-6">今すぐお問い合わせ</h2>
-            <p class="text-xl mb-8 opacity-90">
+    <section id="contact" class="py-20 bg-gradient-to-r from-primary to-blue-600 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('image/pattern.png')] opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10" data-aos="zoom-in">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">今すぐお問い合わせ</h2>
+            <p class="text-lg md:text-xl mb-8 opacity-90">
                 あなたの製品に最適な加飾方法をご提案いたします。見積もり・技術相談は無料です。
             </p>
 
             <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="text-center">
+                <div class="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm">
                     <div
                         class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="ri-money-dollar-circle-line text-2xl"></i>
                     </div>
                     <h3 class="text-lg font-semibold mb-2">見積もり無料</h3>
-                    <p class="opacity-80">詳細な見積もりを無料で提供</p>
+                    <p class="opacity-80 text-sm">詳細な見積もりを無料で提供</p>
                 </div>
-                <div class="text-center">
+                <div class="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm">
                     <div
                         class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="ri-customer-service-2-line text-2xl"></i>
                     </div>
                     <h3 class="text-lg font-semibold mb-2">技術相談対応</h3>
-                    <p class="opacity-80">専門技術者が丁寧にサポート</p>
+                    <p class="opacity-80 text-sm">専門技術者が丁寧にサポート</p>
                 </div>
-                <div class="text-center">
+                <div class="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm">
                     <div
                         class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="ri-global-line text-2xl"></i>
                     </div>
                     <h3 class="text-lg font-semibold mb-2">どこでも対応可能</h3>
-                    <p class="opacity-80">全世界中どこの国でも対応</p>
+                    <p class="opacity-80 text-sm">全世界中どこの国でも対応</p>
                 </div>
             </div>
 
             <a href="contact.html"
-                class="bg-white text-primary hover:bg-gray-100 px-12 py-4 !rounded-button text-xl font-bold whitespace-nowrap transition-colors shadow-lg">
+                class="bg-white text-primary hover:bg-gray-100 px-12 py-4 !rounded-button text-xl font-bold whitespace-nowrap transition-colors shadow-lg inline-block transform hover:-translate-y-1">
                 無料見積もり・技術相談を申し込む
             </a>
         </div>
@@ -579,17 +602,21 @@
                     const category = this.getAttribute('data-category');
                     const items = galleryData[category];
 
-                    galleryContent.innerHTML = items.map(item => `
-                        <div class="gallery-item bg-gray-900 rounded-2xl overflow-hidden">
-                            <div class="before-after-slider h-64 relative">
-                                <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
+                    galleryContent.style.opacity = '0';
+                    setTimeout(() => {
+                        galleryContent.innerHTML = items.map(item => `
+                            <div class="gallery-item bg-gray-900 rounded-2xl overflow-hidden group" data-aos="fade-up">
+                                <div class="h-64 overflow-hidden">
+                                    <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold mb-2">${item.title}</h3>
+                                    <p class="text-gray-400">${item.description}</p>
+                                </div>
                             </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2">${item.title}</h3>
-                                <p class="text-gray-400">${item.description}</p>
-                            </div>
-                        </div>
-                    `).join('');
+                        `).join('');
+                        galleryContent.style.opacity = '1';
+                    }, 300);
                 });
             });
         });
@@ -628,6 +655,17 @@
                     header.classList.remove('bg-opacity-95', 'backdrop-blur-sm');
                 }
             });
+        });
+    </script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic',
         });
     </script>
 </body>
