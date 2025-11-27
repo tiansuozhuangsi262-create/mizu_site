@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="DAuudNcslqNA0lsBZY2HDSimgwjyV_t2zAK7etwS6Fg" />
+    <title>水圧転写（ハイドログラフィックス）とは？ | 基礎知識・仕組み・メリット - DDP HYDRO</title>
+    <meta name="description"
+        content="水圧転写（ハイドログラフィックス）の仕組み、メリット、塗装やカッティングシートとの違いを徹底解説。なぜ複雑な形状に印刷できるのか？耐久性は？そんな疑問にお答えします。">
+    <meta property="og:title" content="水圧転写（ハイドログラフィックス）とは？ | 基礎知識・仕組み・メリット - DDP HYDRO">
+    <meta property="og:description"
+        content="水圧転写（ハイドログラフィックス）の仕組み、メリット、塗装やカッティングシートとの違いを徹底解説。なぜ複雑な形状に印刷できるのか？耐久性は？そんな疑問にお答えします。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://ddp-hydro.com/knowledge.html">
+    <meta property="og:image" content="image/knowledge_hero.png">
+    <meta property="og:site_name" content="DDP HYDRO">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <link rel="canonical" href="https://ddp-hydro.com/knowledge.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ホーム",
+        "item": "https://ddp-hydro.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "基礎知識",
+        "item": "https://ddp-hydro.com/knowledge.html"
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "シールみたいにすぐに剥がれるんじゃない？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "いいえ、剥がれません。水圧転写はインクを素材に直接定着させ、さらにその上から自動車のボディと同じような「トップコート（クリア塗装）」で保護します。そのため、爪で引っ掻いたり、雨に濡れたりしても剥がれることはありません。"
+        }
+      }, {
+        "@type": "Question",
+        "name": "水に濡れるものには使えない？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "いいえ、問題なく使えます。施工工程自体が水を使うものであり、完成後は耐水性のあるトップコートで守られています。ルアーやボートのパーツ、自動車の外装など、水に触れる製品にも広く採用されています。"
+        }
+      }, {
+        "@type": "Question",
+        "name": "どんな素材にもできるの？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "基本的には「水に浸けられるもの」「塗装ができるもの」であれば可能です。プラスチック（ABS, PPなど）、金属、木材、ガラス、セラミックなどに対応します。ただし、水に浮いてしまうほど軽いものや、水で変形・破損する素材（紙、布、一部の電子機器そのもの）には施工できません。"
+        }
+      }]
+    }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00A3FF',
+                        secondary: '#121212'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(31, 41, 55, 0.8)),
+                url('image/knowledge_hero.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .check-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .check-list li::before {
+            content: '\eb7b';
+            font-family: 'remixicon';
+            position: absolute;
+            left: 0;
+            color: #00A3FF;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="bg-white pt-20">
+    <!-- Global Navigation Bar -->
+    <nav class="bg-[#121212] text-white fixed w-full top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center">
+                <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto">
+            </a>
+
+            <!-- PC Menu -->
+            <div class="hidden md:flex space-x-5 items-center text-sm lg:text-base">
+                <a href="index.html" class="hover:text-[#00A3FF] transition-colors">ホーム</a>
+                <a href="knowledge.html" class="text-[#00A3FF] font-bold transition-colors">基礎知識</a>
+                <a href="materials.html" class="hover:text-[#00A3FF] transition-colors">対応素材</a>
+                <a href="strength.html" class="hover:text-[#00A3FF] transition-colors">当社の強み</a>
+                <a href="works.html" class="hover:text-[#00A3FF] transition-colors">施工事例</a>
+                <a href="service.html" class="hover:text-[#00A3FF] transition-colors">料金・流れ</a>
+                <a href="contact.html"
+                    class="bg-[#00A3FF] text-white px-5 py-2 rounded-full hover:bg-blue-600 transition-colors whitespace-nowrap font-bold shadow-lg">
+                    お問い合わせ
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Content (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#1a1a1a] pb-4">
+            <div class="flex flex-col items-center space-y-4 py-4">
+                <a href="index.html"
+                    class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">ホーム</a>
+                <a href="knowledge.html"
+                    class="block text-[#00A3FF] font-bold transition-colors w-full text-center py-2">基礎知識</a>
+                <a href="materials.html"
+                    class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">対応素材</a>
+                <a href="strength.html"
+                    class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">当社の強み</a>
+                <a href="works.html"
+                    class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">施工事例</a>
+                <a href="service.html"
+                    class="block text-white hover:text-[#00A3FF] transition-colors w-full text-center py-2">料金・流れ</a>
+                <a href="contact.html"
+                    class="block bg-[#00A3FF] text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors whitespace-nowrap font-bold w-3/4 text-center mt-2">
+                    お問い合わせ
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileMenuButton.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="hero-bg py-32 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight" data-aos="fade-up">
+                水圧転写<span class="text-sm md:text-xl font-normal block mt-2">（ハイドログラフィックス）</span>とは？
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                水圧を利用して、複雑な3次元形状にデザインを転写する特殊印刷技術。<br>
+                その仕組みと、他の加飾技術との違いをわかりやすく解説します。
+            </p>
+        </div>
+    </section>
+
+    <!-- What is Hydrographics -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">曲面への印刷を可能にする技術</h2>
+                <p class="text-gray-600 leading-relaxed text-lg">
+                    水圧転写（Water Transfer
+                    Printing）は、特殊なフィルムを水面に浮かべ、その上から対象物を沈めることで、水圧を利用してフィルムのインク層を対象物に密着させる技術です。<br><br>
+                    通常の印刷やシールではシワになってしまうような<strong>「曲面」「凹凸」「複雑な形状」</strong>に対しても、継ぎ目のない美しいパターンを施すことができるのが最大の特徴です。
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-gray-50 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-16 h-16 bg-blue-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                        <i class="ri-shape-line"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">複雑な形状に対応</h3>
+                    <p class="text-sm text-gray-600">3D曲面、凹凸、角のある製品でも隅々まで転写可能</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-16 h-16 bg-blue-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                        <i class="ri-palette-line"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">多彩なデザイン</h3>
+                    <p class="text-sm text-gray-600">木目、カーボン、迷彩、幾何学模様など数千種類のパターン</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-16 h-16 bg-blue-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                        <i class="ri-drop-line"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">高い耐久性</h3>
+                    <p class="text-sm text-gray-600">トップコートによる保護で、自動車外装にも使える耐久性</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mechanism -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">水圧転写の仕組み（プロセス）</h2>
+
+            <div class="space-y-8">
+                <!-- Step 1 -->
+                <div class="flex flex-col md:flex-row gap-8 items-center bg-white p-8 rounded-2xl shadow-sm"
+                    data-aos="fade-right">
+                    <div class="w-full md:w-1/3 text-center">
+                        <div
+                            class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto text-4xl text-gray-400">
+                            <i class="ri-file-list-3-line"></i>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-xl font-bold text-primary mb-2">STEP 01. フィルムの準備・水面展開</h3>
+                        <p class="text-gray-600">
+                            専用の水溶性フィルム（PVAフィルム）を水槽の水面に静かに浮かべます。フィルムは水に溶ける性質を持っており、インク層だけが水面に残る状態を作ります。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex flex-col md:flex-row gap-8 items-center bg-white p-8 rounded-2xl shadow-sm"
+                    data-aos="fade-left">
+                    <div class="w-full md:w-1/3 text-center md:order-2">
+                        <div
+                            class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto text-4xl text-gray-400">
+                            <i class="ri-flask-line"></i>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3 md:order-1">
+                        <h3 class="text-xl font-bold text-primary mb-2">STEP 02. 活性化剤の塗布</h3>
+                        <p class="text-gray-600">
+                            水面に浮かんだフィルムに「活性化剤」をスプレーします。これによりフィルムのベース部分が溶解し、インクが液状化して水面に漂う状態になります。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex flex-col md:flex-row gap-8 items-center bg-white p-8 rounded-2xl shadow-sm"
+                    data-aos="fade-right">
+                    <div class="w-full md:w-1/3 text-center">
+                        <div
+                            class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto text-4xl text-gray-400">
+                            <i class="ri-arrow-down-circle-line"></i>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-xl font-bold text-primary mb-2">STEP 03. 転写（ディッピング）</h3>
+                        <p class="text-gray-600">
+                            対象物を上からゆっくりと水中に沈めます。水圧によって液状化したインクが対象物の表面に均一に押し付けられ、複雑な形状にも隙間なく密着します。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex flex-col md:flex-row gap-8 items-center bg-white p-8 rounded-2xl shadow-sm"
+                    data-aos="fade-left">
+                    <div class="w-full md:w-1/3 text-center md:order-2">
+                        <div
+                            class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto text-4xl text-gray-400">
+                            <i class="ri-drop-line"></i>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3 md:order-1">
+                        <h3 class="text-xl font-bold text-primary mb-2">STEP 04. 洗浄・乾燥</h3>
+                        <p class="text-gray-600">
+                            水から引き上げた後、表面に残った余分なフィルム成分（ぬめり）をシャワーで洗い流し、しっかりと乾燥させます。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="flex flex-col md:flex-row gap-8 items-center bg-white p-8 rounded-2xl shadow-sm"
+                    data-aos="fade-right">
+                    <div class="w-full md:w-1/3 text-center">
+                        <div
+                            class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto text-4xl text-gray-400">
+                            <i class="ri-shield-star-line"></i>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-xl font-bold text-primary mb-2">STEP 05. トップコート（保護塗装）</h3>
+                        <p class="text-gray-600">
+                            最後にクリア塗装（トップコート）を施します。これによりインクを保護し、光沢感やマット感などの質感を与え、耐久性を飛躍的に向上させます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">他の技術との比較</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse bg-white shadow-lg rounded-xl overflow-hidden">
+                    <thead>
+                        <tr class="bg-gray-900 text-white">
+                            <th class="p-4 text-left">比較項目</th>
+                            <th class="p-4 bg-primary text-white text-center w-1/4">水圧転写</th>
+                            <th class="p-4 text-center w-1/4">カッティングシート</th>
+                            <th class="p-4 text-center w-1/4">塗装（単色）</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-4 font-bold">3D曲面への対応</td>
+                            <td class="p-4 text-center text-primary font-bold text-lg">◎<br><span
+                                    class="text-xs text-gray-500 font-normal">非常に得意</span></td>
+                            <td class="p-4 text-center">△<br><span class="text-xs text-gray-500">シワになりやすい</span></td>
+                            <td class="p-4 text-center">◯<br><span class="text-xs text-gray-500">可能</span></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-4 font-bold">デザインの自由度</td>
+                            <td class="p-4 text-center text-primary font-bold text-lg">◎<br><span
+                                    class="text-xs text-gray-500 font-normal">柄物・写真も可</span></td>
+                            <td class="p-4 text-center">◯<br><span class="text-xs text-gray-500">柄物可</span></td>
+                            <td class="p-4 text-center">△<br><span class="text-xs text-gray-500">基本は単色</span></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-4 font-bold">耐久性・耐候性</td>
+                            <td class="p-4 text-center text-primary font-bold text-lg">◎<br><span
+                                    class="text-xs text-gray-500 font-normal">トップコートで保護</span></td>
+                            <td class="p-4 text-center">△<br><span class="text-xs text-gray-500">剥がれのリスク</span></td>
+                            <td class="p-4 text-center">◎<br><span class="text-xs text-gray-500">高い</span></td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-4 font-bold">継ぎ目のなさ</td>
+                            <td class="p-4 text-center text-primary font-bold text-lg">◯<br><span
+                                    class="text-xs text-gray-500 font-normal">目立ちにくい</span></td>
+                            <td class="p-4 text-center">✕<br><span class="text-xs text-gray-500">継ぎ目が出る</span></td>
+                            <td class="p-4 text-center">◎<br><span class="text-xs text-gray-500">継ぎ目なし</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4 font-bold">コスト</td>
+                            <td class="p-4 text-center">◯<br><span class="text-xs text-gray-500">中程度</span></td>
+                            <td class="p-4 text-center">◎<br><span class="text-xs text-gray-500">安価（DIYなら）</span></td>
+                            <td class="p-4 text-center">◯<br><span class="text-xs text-gray-500">中程度</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ / Misconceptions -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">よくある誤解と真実</h2>
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up">
+                    <h3 class="font-bold text-lg mb-2 flex items-center"><i
+                            class="ri-question-line text-red-500 mr-2 text-xl"></i>「シールみたいにすぐに剥がれるんじゃない？」
+                    </h3>
+                    <p class="text-gray-600 pl-7">
+                        いいえ、剥がれません。水圧転写はインクを素材に直接定着させ、さらにその上から自動車のボディと同じような「トップコート（クリア塗装）」で保護します。そのため、爪で引っ掻いたり、雨に濡れたりしても剥がれることはありません。
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="font-bold text-lg mb-2 flex items-center"><i
+                            class="ri-question-line text-red-500 mr-2 text-xl"></i>「水に濡れるものには使えない？」
+                    </h3>
+                    <p class="text-gray-600 pl-7">
+                        いいえ、問題なく使えます。施工工程自体が水を使うものであり、完成後は耐水性のあるトップコートで守られています。ルアーやボートのパーツ、自動車の外装など、水に触れる製品にも広く採用されています。
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="font-bold text-lg mb-2 flex items-center"><i
+                            class="ri-question-line text-red-500 mr-2 text-xl"></i>「どんな素材にもできるの？」
+                    </h3>
+                    <p class="text-gray-600 pl-7">
+                        基本的には「水に浸けられるもの」「塗装ができるもの」であれば可能です。プラスチック（ABS,
+                        PPなど）、金属、木材、ガラス、セラミックなどに対応します。ただし、水に浮いてしまうほど軽いものや、水で変形・破損する素材（紙、布、一部の電子機器そのもの）には施工できません。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-blue-600 text-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10" data-aos="zoom-in">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">あなたの製品にも、<br>水圧転写の付加価値を。</h2>
+            <p class="text-lg md:text-xl mb-8 opacity-90">
+                「この素材にはできる？」「コストはどれくらい？」<br>
+                まずはお気軽にご相談ください。専門スタッフが丁寧にお答えします。
+            </p>
+            <a href="contact.html"
+                class="bg-white text-primary hover:bg-gray-100 px-12 py-4 !rounded-button text-xl font-bold whitespace-nowrap transition-colors shadow-lg inline-block transform hover:-translate-y-1">
+                無料相談・お問い合わせ
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                <a href="index.html" class="flex items-center w-max">
+                    <img src="image/logo.png" alt="DDP HYDRO" class="h-10 w-auto">
+                </a>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-center">お問い合わせ</h3>
+                    <div class="space-y-2 text-gray-400 text-center">
+                        <p class="flex items-center space-x-2 justify-center">
+                            <i class="ri-mail-line"></i>
+                            <span>ddh.hydra@gmail.com</span>
+                        </p>
+                        <p class="flex items-center space-x-2 justify-center">
+                            <i class="ri-map-pin-line"></i>
+                            <span>ベトナムホーチミン</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 水圧転写技術. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+    </script>
+</body>
+
+</html>
