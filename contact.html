@@ -199,6 +199,9 @@
 
             </div>
 
+            <!-- 成功・エラーメッセージ -->
+            <div id="status-message" class="hidden mb-8 p-4 rounded-lg"></div>
+
             <!-- フォームエリア -->
 
             <div class="bg-[#1a1a1a] rounded-2xl p-8 md:p-12 border border-white/5 shadow-2xl relative overflow-hidden">
@@ -207,8 +210,8 @@
 
                 <!-- ▼▼▼ 1. 入力フォーム ▼▼▼ -->
                 <h2 class="sr-only">お問い合わせフォーム</h2>
-                <form name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field"
-                    enctype="multipart/form-data" class="space-y-8" id="main-form">
+                <form name="contact" method="POST" action="/api/contact" enctype="multipart/form-data" class="space-y-8"
+                    id="main-form">
 
                     <!-- Netlify用ハニーポット（スパム対策） -->
 
@@ -541,47 +544,69 @@
     <!-- ▼▼▼ 制御用JavaScript ▼▼▼ -->
 
     <script>
+        // ページ読み込み時にURLパラメータをチェック
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const statusMessage = document.getElementById('status-message');
+
+            if (urlParams.get('success') === 'true') {
+                // 成功時：フォームを隠して完了メッセージ表示
+                document.getElementById('main-form').classList.add('hidden');
+                document.getElementById('success-message').classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else if (urlParams.get('error')) {
+                // エラー時：メッセージ表示
+                const errorType = urlParams.get('error');
+                let errorMsg = '';
+
+                switch (errorType) {
+                    case 'required':
+                        errorMsg = '必須項目が入力されていません。';
+                        break;
+                    case 'send':
+                        errorMsg = 'メール送信に失敗しました。しばらく経ってから再度お試しください。';
+                        break;
+                    case 'server':
+                        errorMsg = 'サーバーエラーが発生しました。もう一度お試しください。';
+                        break;
+                    default:
+                        errorMsg = 'エラーが発生しました。もう一度お試しください。';
+                }
+
+                if (statusMessage) {
+                    statusMessage.textContent = errorMsg;
+                    statusMessage.className = 'mb-8 p-4 rounded-lg bg-red-500/10 border border-red-500 text-red-400';
+                    statusMessage.classList.remove('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        });
 
         // ファイル選択時の表示
-
         function previewFile(input) {
-
             const placeholder = document.getElementById('upload-placeholder');
-
             const fileName = document.getElementById('file-name');
-
             if (input.files && input.files[0]) {
-
                 placeholder.classList.add('hidden');
-
                 fileName.classList.remove('hidden');
-
                 fileName.innerHTML = '<i class="fa-solid fa-check mr-1"></i>' + input.files[0].name;
-
             } else {
                 placeholder.classList.remove('hidden');
                 fileName.classList.add('hidden');
                 fileName.innerHTML = '';
             }
-
         }
 
         // 確認画面を表示
-
         function showConfirmation() {
-
-            // 必須チェック（簡易）
-
+            // 必須チェック
             const name = document.getElementById('input-name').value;
-
             const email = document.getElementById('input-email').value;
+            const category = document.getElementById('input-category').value;
 
-            if (!name || !email) {
-
-                alert('お名前とメールアドレスは必須です。');
-
+            if (!name || !email || !category) {
+                alert('お名前、メールアドレス、製品ジャンルは必須です。');
                 return;
-
             }
 
             const privacyCheck = document.getElementById('privacy-check');
@@ -591,94 +616,42 @@
             }
 
             // 入力値をモーダルにセット
-
             document.getElementById('confirm-name').textContent = name;
-
             document.getElementById('confirm-email').textContent = email;
-
             document.getElementById('confirm-phone').textContent = document.getElementById('input-phone').value || '-';
-
-            document.getElementById('confirm-category').textContent = document.getElementById('input-category').value;
-
+            document.getElementById('confirm-category').textContent = category;
             document.getElementById('confirm-lot').textContent = document.getElementById('input-lot').value || '-';
-
             document.getElementById('confirm-budget').textContent = document.getElementById('input-budget').value || '-';
-
             document.getElementById('confirm-message').textContent = document.getElementById('input-message').value || 'なし';
 
-
-
             const fileInput = document.getElementById('input-file');
-
             document.getElementById('confirm-file').textContent = (fileInput.files.length > 0) ? fileInput.files[0].name : 'なし';
 
             // モーダル表示
-
             document.getElementById('confirmation-modal').classList.remove('hidden');
-
         }
 
         // 確認画面を閉じる（修正）
-
         function closeConfirmation() {
-
             document.getElementById('confirmation-modal').classList.add('hidden');
-
         }
 
-        // 送信処理
-
+        // 送信処理（修正版）
         function submitForm() {
-
             const form = document.getElementById('main-form');
 
-            const formData = new FormData(form);
-
             // 送信ボタンを無効化（連打防止）
-
             const btn = event.target;
-
+            const originalText = btn.textContent;
             btn.textContent = '送信中...';
-
             btn.disabled = true;
 
-            // Netlify Formsへの送信（AJAX）
+            // モーダルを閉じる
+            closeConfirmation();
 
-            fetch("/", {
-                method: "POST",
-                body: formData
-            })
-
-                .then(() => {
-
-                    // 成功時：モーダルを閉じて、フォームを消し、完了画面を出す
-
-                    closeConfirmation();
-
-                    form.classList.add('hidden');
-
-                    document.getElementById('success-message').classList.remove('hidden');
-
-                    // ページトップへスクロール
-
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-                })
-
-                .catch((error) => {
-
-                    alert('送信に失敗しました。もう一度お試しください。');
-
-                    btn.textContent = 'この内容で送信する';
-
-                    btn.disabled = false;
-
-                    console.error(error);
-
-                });
-
+            // フォームを通常送信（Cloudflare Pages Functionsが処理）
+            form.submit();
         }
-
     </script>
 
     <!-- Breadcrumb (Footer Top) -->

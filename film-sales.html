@@ -388,9 +388,9 @@
                             </ul>
                         </div>
 
-                        <form id="inquiry-form" name="film-sales-contact" method="POST" data-netlify="true"
+                        <form id="inquiry-form" name="film-sales-contact" method="POST" action="/api/film-sales"
                             onsubmit="event.preventDefault(); showConfirmation();">
-                            <input type="hidden" name="form-name" value="film-sales-contact" />
+                            <input type="hidden" name="bot-field" style="display:none" />
                             <input type="hidden" name="product_width" id="hidden-width" />
                             <input type="hidden" name="product_pattern" id="hidden-pattern" />
                             <input type="hidden" name="product_rolls" id="hidden-rolls" />
@@ -677,6 +677,39 @@
 
         // Initialization
         document.addEventListener('DOMContentLoaded', () => {
+            // URLパラメータをチェック
+            const urlParams = new URLSearchParams(window.location.search);
+
+            if (urlParams.get('success') === 'true') {
+                // 成功時：成功画面を表示
+                document.getElementById('product-view').classList.add('hidden');
+                document.getElementById('qa-section').classList.add('hidden');
+                document.getElementById('spec-section').classList.add('hidden');
+                document.getElementById('success-view').classList.remove('hidden');
+                window.scrollTo(0, 0);
+            } else if (urlParams.get('error')) {
+                // エラー時：アラート表示
+                const errorType = urlParams.get('error');
+                let errorMsg = '';
+
+                switch (errorType) {
+                    case 'required':
+                        errorMsg = '必須項目が入力されていません。';
+                        break;
+                    case 'send':
+                        errorMsg = 'メール送信に失敗しました。しばらく経ってから再度お試しください。';
+                        break;
+                    case 'server':
+                        errorMsg = 'サーバーエラーが発生しました。もう一度お試しください。';
+                        break;
+                    default:
+                        errorMsg = 'エラーが発生しました。もう一度お試しください。';
+                }
+
+                alert(errorMsg);
+                window.history.replaceState({}, '', '/film-sales.html');
+            }
+
             renderThumbnails();
             renderWidthOptions();
             renderPatternOptions();
@@ -699,7 +732,6 @@
                     }
                 });
 
-                // Close mobile menu when clicking a link
                 const mobileLinks = mobileMenu.querySelectorAll('a');
                 mobileLinks.forEach(link => {
                     link.addEventListener('click', () => {
@@ -776,11 +808,9 @@
 
         function setPattern(pattern, index) {
             selectedPattern = pattern;
-            // Update image if index is provided (clicked from button)
             if (typeof index === 'number') {
                 setCurrentImage(index);
             } else {
-                // Try to find index if not provided
                 const idx = patternOptions.indexOf(pattern);
                 if (idx !== -1) setCurrentImage(idx);
             }
@@ -803,7 +833,6 @@
         function updateSummary() {
             const totalLength = rolls * 250;
 
-            // Update display in options section
             const displayWidth = document.getElementById('display-width');
             const displayRolls = document.getElementById('display-rolls');
             const totalLengthEl = document.getElementById('total-length');
@@ -812,7 +841,6 @@
             if (displayRolls) displayRolls.textContent = rolls;
             if (totalLengthEl) totalLengthEl.textContent = totalLength;
 
-            // Update summary in form section
             const summaryWidth = document.getElementById('summary-width');
             const summaryPattern = document.getElementById('summary-pattern');
             const summaryRolls = document.getElementById('summary-rolls');
@@ -823,7 +851,6 @@
             if (summaryRolls) summaryRolls.textContent = rolls;
             if (summaryTotal) summaryTotal.textContent = totalLength;
 
-            // Update hidden fields for Netlify
             const hiddenWidth = document.getElementById('hidden-width');
             const hiddenPattern = document.getElementById('hidden-pattern');
             const hiddenRolls = document.getElementById('hidden-rolls');
@@ -837,14 +864,12 @@
 
         // Form Logic
         function showConfirmation() {
-            // Validate privacy check
             const privacyCheck = document.getElementById('privacy-check');
             if (!privacyCheck.checked) {
                 alert('プライバシーポリシーへの同意が必要です。');
                 return;
             }
 
-            // Populate confirmation fields
             document.getElementById('confirm-width').textContent = selectedWidth;
             document.getElementById('confirm-pattern').textContent = selectedPattern;
             document.getElementById('confirm-rolls').textContent = rolls;
@@ -856,13 +881,11 @@
             document.getElementById('confirm-company').textContent = document.getElementById('input-company').value || '-';
             document.getElementById('confirm-message').textContent = document.getElementById('input-message').value || 'なし';
 
-            // Switch views
             document.getElementById('product-view').classList.add('hidden');
             document.getElementById('qa-section').classList.add('hidden');
             document.getElementById('spec-section').classList.add('hidden');
             document.getElementById('confirmation-view').classList.remove('hidden');
 
-            // Scroll to top
             window.scrollTo(0, 0);
         }
 
@@ -876,41 +899,44 @@
 
         function submitForm() {
             const form = document.getElementById('inquiry-form');
-            const formData = new FormData(form);
 
-            fetch('/', {
-                method: 'POST',
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString()
-            })
-                .then(() => {
-                    document.getElementById('confirmation-view').classList.add('hidden');
-                    document.getElementById('success-view').classList.remove('hidden');
-                    window.scrollTo(0, 0);
-                })
-                .catch((error) => {
-                    alert('送信に失敗しました。もう一度お試しください。');
-                    console.error(error);
-                });
+            // 確認画面を閉じる
+            document.getElementById('confirmation-view').classList.add('hidden');
+            document.getElementById('product-view').classList.remove('hidden');
+            document.getElementById('qa-section').classList.remove('hidden');
+            document.getElementById('spec-section').classList.remove('hidden');
+
+            // ローディング表示
+            const loadingOverlay = document.createElement('div');
+            loadingOverlay.id = 'loading-overlay';
+            loadingOverlay.className = 'fixed inset-0 bg-black/50 z-50 flex items-center justify-center';
+            loadingOverlay.innerHTML = `
+                <div class="bg-white rounded-lg p-8 text-center">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+                    <p class="text-gray-700">送信中...</p>
+                </div>
+            `;
+            document.body.appendChild(loadingOverlay);
+
+            // フォームを通常送信
+            form.submit();
         }
 
         function resetForm() {
-            // Reset form fields
+            window.history.replaceState({}, '', '/film-sales.html');
+
             document.getElementById('inquiry-form').reset();
 
-            // Reset state
             rolls = 1;
             selectedWidth = '50cm';
             selectedPattern = '大理石';
             currentImage = 0;
 
-            // Re-render
             renderThumbnails();
             renderWidthOptions();
             renderPatternOptions();
             setRolls(1);
 
-            // Switch views
             document.getElementById('success-view').classList.add('hidden');
             document.getElementById('product-view').classList.remove('hidden');
             document.getElementById('qa-section').classList.remove('hidden');
