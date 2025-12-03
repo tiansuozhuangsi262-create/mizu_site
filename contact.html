@@ -10,10 +10,12 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="DAuudNcslqNA0lsBZY2HDSimgwjyV_t2zAK7etwS6Fg" />
-    <title>お問い合わせ | 無料見積もり・技術相談 - Đại Đột Phá</title>
-    <meta name="description" content="水圧転写に関するお問い合わせ、無料お見積もりはこちら。ベトナム生産によるコストダウンのご相談など、日本人スタッフが丁寧に対応いたします。">
-    <meta property="og:title" content="お問い合わせ | 無料見積もり・技術相談 - Đại Đột Phá">
-    <meta property="og:description" content="水圧転写に関するお問い合わせ、無料お見積もりはこちら。ベトナム生産によるコストダウンのご相談など、日本人スタッフが丁寧に対応いたします。">
+    <title>お問い合わせ・無料見積もり | 水圧転写・塗装の技術相談 - Đại Đột Phá</title>
+    <meta name="description"
+        content="水圧転写・塗装加工に関するお問い合わせ、お見積もり依頼はこちら。試作の相談やコストダウンの提案など、日本人スタッフが迅速・丁寧に対応いたします。お気軽にご連絡ください。">
+    <meta property="og:title" content="お問い合わせ・無料見積もり | 水圧転写・塗装の技術相談 - Đại Đột Phá">
+    <meta property="og:description"
+        content="水圧転写・塗装加工に関するお問い合わせ、お見積もり依頼はこちら。試作の相談やコストダウンの提案など、日本人スタッフが迅速・丁寧に対応いたします。お気軽にご連絡ください。">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://ddp-hydro.com/contact.html">
     <link rel="canonical" href="https://ddp-hydro.com/contact.html">
@@ -367,6 +369,19 @@
 
                     </div>
 
+                    <!-- プライバシーポリシー同意 -->
+                    <div class="text-center mb-6">
+                        <label class="inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="privacy-check"
+                                class="form-checkbox h-5 w-5 text-[#00A3FF] rounded border-gray-600 bg-[#2a2a2a] focus:ring-0 focus:ring-offset-0">
+                            <span class="ml-2 text-gray-400 text-sm">
+                                <a href="privacy.html" target="_blank"
+                                    class="text-[#00A3FF] underline hover:text-white transition-colors">プライバシーポリシー</a>
+                                に同意する
+                            </span>
+                        </label>
+                    </div>
+
                     <!-- 確認画面へ進むボタン -->
 
                     <div class="text-center pt-4">
@@ -414,6 +429,8 @@
         </div>
 
     </section>
+
+
 
     <!-- ▼▼▼ 3. 確認用モーダル（最初は非表示） ▼▼▼ -->
 
@@ -564,6 +581,12 @@
 
             }
 
+            const privacyCheck = document.getElementById('privacy-check');
+            if (!privacyCheck.checked) {
+                alert('プライバシーポリシーへの同意が必要です。');
+                return;
+            }
+
             // 入力値をモーダルにセット
 
             document.getElementById('confirm-name').textContent = name;
@@ -655,6 +678,27 @@
 
     </script>
 
+    <!-- Breadcrumb (Footer Top) -->
+    <div class="bg-gray-50 border-t border-gray-200 py-4">
+        <div class="max-w-7xl mx-auto px-6">
+            <nav class="flex text-xs text-gray-500" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="index.html" class="inline-flex items-center hover:text-primary transition-colors">
+                            <i class="ri-home-line mr-1"></i>ホーム
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i class="ri-arrow-right-s-line text-gray-400 mx-1"></i>
+                            <span class="text-gray-400">お問い合わせ</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-black text-white py-16">
         <div class="max-w-7xl mx-auto px-6">
@@ -669,7 +713,7 @@
                     <div class="space-y-2 text-gray-400 text-center">
                         <p class="flex items-center space-x-2 justify-center">
                             <i class="ri-mail-line"></i>
-                            <span>ddh.hydra@gmail.com</span>
+                            <span>ddp.hydrographic@gmail.com</span>
                         </p>
                         <p class="flex items-center space-x-2 justify-center">
                             <i class="ri-map-pin-line"></i>
