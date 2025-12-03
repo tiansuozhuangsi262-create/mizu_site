@@ -4,64 +4,64 @@
  */
 
 export async function onRequestPost(context) {
-  try {
-    const formData = await context.request.formData();
-    
-    // スパム対策（honeypot）
-    if (formData.get('bot-field')) {
-      console.log('Spam detected');
-      return new Response('Bad Request', { status: 400 });
-    }
+    try {
+        const formData = await context.request.formData();
 
-    // フォームデータの取得
-    const data = {
-      name: formData.get('name') || '',
-      company: formData.get('company') || '',
-      email: formData.get('email') || '',
-      phone: formData.get('phone') || '',
-      category: formData.get('category') || '',
-      material: formData.get('material') || '',
-      lot_qty: formData.get('lot_qty') || '',
-      budget: formData.get('budget') || '',
-      message: formData.get('message') || '',
-      timestamp: new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Ho_Chi_Minh' })
-    };
+        // スパム対策（honeypot）
+        if (formData.get('bot-field')) {
+            console.log('Spam detected');
+            return new Response('Bad Request', { status: 400 });
+        }
 
-    // バリデーション
-    if (!data.name || !data.email) {
-      return Response.redirect('/contact.html?error=required', 302);
-    }
+        // フォームデータの取得
+        const data = {
+            name: formData.get('name') || '',
+            company: formData.get('company') || '',
+            email: formData.get('email') || '',
+            phone: formData.get('phone') || '',
+            category: formData.get('category') || '',
+            material: formData.get('material') || '',
+            lot_qty: formData.get('lot_qty') || '',
+            message: formData.get('message') || '',
+            timestamp: new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Ho_Chi_Minh' })
+        };
 
-    // ファイルの処理（オプション）
-    const attachment = formData.get('attachment');
-    let attachmentInfo = 'なし';
-    if (attachment && attachment.size > 0) {
-      attachmentInfo = `${attachment.name} (${(attachment.size / 1024).toFixed(1)}KB)`;
-    }
+        // バリデーション
+        if (!data.name || !data.email) {
+            const url = new URL(context.request.url);
+            return Response.redirect(`${url.origin}/contact.html?error=required`, 302);
+        }
 
-    // メール送信（MailChannels API経由）
-    const emailResponse = await fetch('https://api.mailchannels.net/tx/v1/send', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        personalizations: [
-          {
-            to: [{ email: 'ddp.hydrographic@gmail.com', name: 'Đại Đột Phá' }],
-            dkim_domain: 'ddp-hydro.com',
-            dkim_selector: 'mailchannels',
-          },
-        ],
-        from: {
-          email: 'noreply@ddp-hydro.com',
-          name: 'Đại Đột Phá お問い合わせフォーム',
-        },
-        subject: `【お問い合わせ】${data.name}様より - 水圧転写技術`,
-        content: [
-          {
-            type: 'text/html',
-            value: `
+        // ファイルの処理（オプション）
+        const attachment = formData.get('attachment');
+        let attachmentInfo = 'なし';
+        if (attachment && attachment.size > 0) {
+            attachmentInfo = `${attachment.name} (${(attachment.size / 1024).toFixed(1)}KB)`;
+        }
+
+        // メール送信（MailChannels API経由）
+        const emailResponse = await fetch('https://api.mailchannels.net/tx/v1/send', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                personalizations: [
+                    {
+                        to: [{ email: 'ddp.hydrographic@gmail.com', name: 'Đại Đột Phá' }],
+                        dkim_domain: 'ddp-hydro.com',
+                        dkim_selector: 'mailchannels',
+                    },
+                ],
+                from: {
+                    email: 'noreply@ddp-hydro.com',
+                    name: 'Đại Đột Phá お問い合わせフォーム',
+                },
+                subject: `【お問い合わせ】${data.name}様より - 水圧転写技術`,
+                content: [
+                    {
+                        type: 'text/html',
+                        value: `
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -206,10 +206,10 @@ export async function onRequestPost(context) {
 </body>
 </html>
             `,
-          },
-          {
-            type: 'text/plain',
-            value: `
+                    },
+                    {
+                        type: 'text/plain',
+                        value: `
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💧 新しいお問い合わせが届きました
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -234,21 +234,28 @@ ${data.message || '（未入力）'}
 送信日時: ${data.timestamp}
 このメールは Đại Đột Phá (ddp-hydro.com) のお問い合わせフォームから自動送信されました。
             `,
-          },
-        ],
-      }),
-    });
+                    },
+                ],
+            }),
+        });
 
-    if (!emailResponse.ok) {
-      console.error('Email sending failed:', await emailResponse.text());
-      return Response.redirect('/contact.html?error=send', 302);
+        // URLのオリジンを取得
+        const url = new URL(context.request.url);
+        const origin = url.origin;
+
+        if (!emailResponse.ok) {
+            console.error('Email sending failed:', await emailResponse.text());
+            return Response.redirect(`${origin}/contact.html?error=send`, 302);
+        }
+
+        // 成功時はサンクスページへリダイレクト
+        return Response.redirect(`${origin}/contact.html?success=true`, 302);
+
+    } catch (error) {
+        console.error('Form submission error:', error);
+        // エラー時も絶対URLでリダイレクト
+        const url = new URL(context.request.url);
+        const origin = url.origin;
+        return Response.redirect(`${origin}/contact.html?error=server`, 302);
     }
-
-    // 成功時はサンクスページへリダイレクト
-    return Response.redirect('/contact.html?success=true', 302);
-
-  } catch (error) {
-    console.error('Form submission error:', error);
-    return Response.redirect('/contact.html?error=server', 302);
-  }
 }

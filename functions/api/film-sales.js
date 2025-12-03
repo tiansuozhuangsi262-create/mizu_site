@@ -4,57 +4,58 @@
  */
 
 export async function onRequestPost(context) {
-    try {
-        const formData = await context.request.formData();
+  try {
+    const formData = await context.request.formData();
 
-        // スパム対策（honeypot）
-        if (formData.get('bot-field')) {
-            console.log('Spam detected');
-            return new Response('Bad Request', { status: 400 });
-        }
+    // スパム対策（honeypot）
+    if (formData.get('bot-field')) {
+      console.log('Spam detected');
+      return new Response('Bad Request', { status: 400 });
+    }
 
-        // フォームデータの取得
-        const data = {
-            name: formData.get('name') || '',
-            email: formData.get('email') || '',
-            phone: formData.get('phone') || '',
-            company: formData.get('company') || '',
-            message: formData.get('message') || '',
-            product_width: formData.get('product_width') || '',
-            product_pattern: formData.get('product_pattern') || '',
-            product_rolls: formData.get('product_rolls') || '',
-            product_total_length: formData.get('product_total_length') || '',
-            timestamp: new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Ho_Chi_Minh' })
-        };
+    // フォームデータの取得
+    const data = {
+      name: formData.get('name') || '',
+      email: formData.get('email') || '',
+      phone: formData.get('phone') || '',
+      company: formData.get('company') || '',
+      message: formData.get('message') || '',
+      product_width: formData.get('product_width') || '',
+      product_pattern: formData.get('product_pattern') || '',
+      product_rolls: formData.get('product_rolls') || '',
+      product_total_length: formData.get('product_total_length') || '',
+      timestamp: new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Ho_Chi_Minh' })
+    };
 
-        // バリデーション
-        if (!data.name || !data.email) {
-            return Response.redirect('/film-sales.html?error=required', 302);
-        }
+    // バリデーション
+    if (!data.name || !data.email) {
+      const url = new URL(context.request.url);
+      return Response.redirect(`${url.origin}/film-sales.html?error=required`, 302);
+    }
 
-        // メール送信（MailChannels API経由）
-        const emailResponse = await fetch('https://api.mailchannels.net/tx/v1/send', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                personalizations: [
-                    {
-                        to: [{ email: 'ddp.hydrographic@gmail.com', name: 'Đại Đột Phá' }],
-                        dkim_domain: 'ddp-hydro.com',
-                        dkim_selector: 'mailchannels',
-                    },
-                ],
-                from: {
-                    email: 'noreply@ddp-hydro.com',
-                    name: 'Đại Đột Phá フィルム販売お問い合わせ',
-                },
-                subject: `【フィルム販売お問い合わせ】${data.name}様より - 水転写フィルム`,
-                content: [
-                    {
-                        type: 'text/html',
-                        value: `
+    // メール送信（MailChannels API経由）
+    const emailResponse = await fetch('https://api.mailchannels.net/tx/v1/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        personalizations: [
+          {
+            to: [{ email: 'ddp.hydrographic@gmail.com', name: 'Đại Đột Phá' }],
+            dkim_domain: 'ddp-hydro.com',
+            dkim_selector: 'mailchannels',
+          },
+        ],
+        from: {
+          email: 'noreply@ddp-hydro.com',
+          name: 'Đại Đột Phá フィルム販売お問い合わせ',
+        },
+        subject: `【フィルム販売お問い合わせ】${data.name}様より - 水転写フィルム`,
+        content: [
+          {
+            type: 'text/html',
+            value: `
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -228,10 +229,10 @@ export async function onRequestPost(context) {
 </body>
 </html>
             `,
-                    },
-                    {
-                        type: 'text/plain',
-                        value: `
+          },
+          {
+            type: 'text/plain',
+            value: `
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🎬 フィルム販売お問い合わせが届きました
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -256,21 +257,27 @@ ${data.message || '（未入力）'}
 送信日時: ${data.timestamp}
 このメールは Đại Đột Phá (ddp-hydro.com) のフィルム販売ページから自動送信されました。
             `,
-                    },
-                ],
-            }),
-        });
+          },
+        ],
+      }),
+    });
 
-        if (!emailResponse.ok) {
-            console.error('Email sending failed:', await emailResponse.text());
-            return Response.redirect('/film-sales.html?error=send', 302);
-        }
+    // URLのオリジンを取得
+    const url = new URL(context.request.url);
+    const origin = url.origin;
 
-        // 成功時はサンクスページへリダイレクト
-        return Response.redirect('/film-sales.html?success=true', 302);
-
-    } catch (error) {
-        console.error('Form submission error:', error);
-        return Response.redirect('/film-sales.html?error=server', 302);
+    if (!emailResponse.ok) {
+      console.error('Email sending failed:', await emailResponse.text());
+      return Response.redirect(`${origin}/film-sales.html?error=send`, 302);
     }
+
+    // 成功時はサンクスページへリダイレクト
+    return Response.redirect(`${origin}/film-sales.html?success=true`, 302);
+
+  } catch (error) {
+    console.error('Form submission error:', error);
+    const url = new URL(context.request.url);
+    const origin = url.origin;
+    return Response.redirect(`${origin}/film-sales.html?error=server`, 302);
+  }
 }
