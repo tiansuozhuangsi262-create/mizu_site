@@ -33,29 +33,29 @@ export async function onRequestPost(context) {
       return Response.redirect(`${url.origin}/film-sales.html?error=required`, 302);
     }
 
-    // メール送信（MailChannels API経由）
-    const emailResponse = await fetch('https://api.mailchannels.net/tx/v1/send', {
+    // Resend APIキーの確認
+    const RESEND_API_KEY = context.env.RESEND_API_KEY;
+    // URLのオリジンを取得
+    const url = new URL(context.request.url);
+    const origin = url.origin;
+
+    if (!RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not set');
+      return Response.redirect(`${origin}/film-sales.html?error=server&details=ConfigError`, 302);
+    }
+
+    // メール送信（Resend API経由）
+    const emailResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${RESEND_API_KEY}`
       },
       body: JSON.stringify({
-        personalizations: [
-          {
-            to: [{ email: 'ddp.hydrographic@gmail.com', name: 'Đại Đột Phá' }],
-            dkim_domain: 'ddp-hydro.com',
-            dkim_selector: 'mailchannels',
-          },
-        ],
-        from: {
-          email: 'noreply@ddp-hydro.com',
-          name: 'Đại Đột Phá フィルム販売お問い合わせ',
-        },
+        from: 'Đại Đột Phá <noreply@ddp-hydro.com>',
+        to: ['ddp.hydrographic@gmail.com'],
         subject: `【フィルム販売お問い合わせ】${data.name}様より - 水転写フィルム`,
-        content: [
-          {
-            type: 'text/html',
-            value: `
+        html: `
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -229,10 +229,7 @@ export async function onRequestPost(context) {
 </body>
 </html>
             `,
-          },
-          {
-            type: 'text/plain',
-            value: `
+        text: `
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🎬 フィルム販売お問い合わせが届きました
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -256,19 +253,14 @@ ${data.message || '（未入力）'}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 送信日時: ${data.timestamp}
 このメールは Đại Đột Phá (ddp-hydro.com) のフィルム販売ページから自動送信されました。
-            `,
-          },
-        ],
+            `
       }),
     });
 
-    // URLのオリジンを取得
-    const url = new URL(context.request.url);
-    const origin = url.origin;
-
     if (!emailResponse.ok) {
-      console.error('Email sending failed:', await emailResponse.text());
-      return Response.redirect(`${origin}/film-sales.html?error=send`, 302);
+      const errorText = await emailResponse.text();
+      console.error('Email sending failed:', errorText);
+      return Response.redirect(`${origin}/film-sales.html?error=send&details=${encodeURIComponent(errorText.substring(0, 100))}`, 302);
     }
 
     // 成功時はサンクスページへリダイレクト

@@ -22,6 +22,7 @@ export async function onRequestPost(context) {
             category: formData.get('category') || '',
             material: formData.get('material') || '',
             lot_qty: formData.get('lot_qty') || '',
+            budget: formData.get('budget') || '',
             message: formData.get('message') || '',
             timestamp: new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Ho_Chi_Minh' })
         };
@@ -39,29 +40,25 @@ export async function onRequestPost(context) {
             attachmentInfo = `${attachment.name} (${(attachment.size / 1024).toFixed(1)}KB)`;
         }
 
-        // メール送信（MailChannels API経由）
-        const emailResponse = await fetch('https://api.mailchannels.net/tx/v1/send', {
+        // Resend APIキーの確認
+        const RESEND_API_KEY = context.env.RESEND_API_KEY;
+        if (!RESEND_API_KEY) {
+            console.error('RESEND_API_KEY is not set');
+            return Response.redirect(`${origin}/contact.html?error=server&details=ConfigError`, 302);
+        }
+
+        // メール送信（Resend API経由）
+        const emailResponse = await fetch('https://api.resend.com/emails', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${RESEND_API_KEY}`
             },
             body: JSON.stringify({
-                personalizations: [
-                    {
-                        to: [{ email: 'ddp.hydrographic@gmail.com', name: 'Đại Đột Phá' }],
-                        dkim_domain: 'ddp-hydro.com',
-                        dkim_selector: 'mailchannels',
-                    },
-                ],
-                from: {
-                    email: 'noreply@ddp-hydro.com',
-                    name: 'Đại Đột Phá お問い合わせフォーム',
-                },
+                from: 'Đại Đột Phá <noreply@ddp-hydro.com>',
+                to: ['ddp.hydrographic@gmail.com'],
                 subject: `【お問い合わせ】${data.name}様より - 水圧転写技術`,
-                content: [
-                    {
-                        type: 'text/html',
-                        value: `
+                html: `
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -206,10 +203,7 @@ export async function onRequestPost(context) {
 </body>
 </html>
             `,
-                    },
-                    {
-                        type: 'text/plain',
-                        value: `
+                text: `
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💧 新しいお問い合わせが届きました
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -233,9 +227,7 @@ ${data.message || '（未入力）'}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 送信日時: ${data.timestamp}
 このメールは Đại Đột Phá (ddp-hydro.com) のお問い合わせフォームから自動送信されました。
-            `,
-                    },
-                ],
+            `
             }),
         });
 
@@ -244,8 +236,9 @@ ${data.message || '（未入力）'}
         const origin = url.origin;
 
         if (!emailResponse.ok) {
-            console.error('Email sending failed:', await emailResponse.text());
-            return Response.redirect(`${origin}/contact.html?error=send`, 302);
+            const errorText = await emailResponse.text();
+            console.error('Email sending failed:', errorText);
+            return Response.redirect(`${origin}/contact.html?error=send&details=${encodeURIComponent(errorText.substring(0, 100))}`, 302);
         }
 
         // 成功時はサンクスページへリダイレクト
